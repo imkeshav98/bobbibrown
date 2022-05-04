@@ -1,9 +1,13 @@
 import React from "react";
 import "./App.css";
-import { Routes } from "./routes/Routes";
+import { Routing } from "./routes/Routes";
 
 function App() {
-  return <Routes />;
+  return (
+    <>
+      <Routing />
+    </>
+  );
 }
 
 export default App;
