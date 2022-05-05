@@ -1,3 +1,6 @@
+body{
+    text-align: center;
+}
 #mainProducts_div{
     width: 90%;
     display: flex;

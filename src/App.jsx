@@ -1,5 +1,5 @@
 import React from "react";
-import {ProductDetails} from './components/ProductDetails'
+import {ProductDetails} from './components/ProductDetails/ProductDetails'
 import './App.css';
 import 'antd/dist/antd.css'
 import { Footer } from "./components/Global/Footer/Footer";
