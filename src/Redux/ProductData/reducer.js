@@ -1,4 +1,4 @@
-import { PRODUCT_DATA } from "./action";
+import { PRODUCT_DATA } from "./actions";
 
 const init = {
   data: [],
