@@ -1,0 +1,125 @@
+footer {
+    background-color: black;
+}
+
+.footer__top *{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+.footer__bottom * {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.footer__top {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 3em 1em;
+    max-width: 1300px;
+    margin: auto;
+}
+.footer__top ul {
+    list-style-type: none;
+}
+
+.footer__top ul li {
+    margin: 0.5em 0em;
+}
+
+.footer__newsletter {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__newsletter input {
+    width: 20em;
+    height: 3em;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    padding: 1.5em;
+    margin: 5px;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.893);
+}
+
+.footer__newsletter button {
+    width: 8em;
+    height: 3em;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    margin: 5px;
+    margin-bottom: 2em;
+}
+
+.footer__top h3 {
+    margin-bottom: 1em;
+}
+.footer__socials {
+    display: flex;
+    gap: 0.5em;
+    font-size: 2em;
+}
+.footer__bottom {
+    color: rgba(245, 245, 245, 0.747);
+    max-width: 1300px;
+    padding: 2em 1em;
+    margin: auto;
+}
+.footer__divider {
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.719);
+}
+.footer__bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1em;
+}
+.footer__bottom ul {
+    list-style-type: none;
+}
+
+.footer__bottom ul li {
+    margin-bottom: 0.5em;
+}
+.footer__bottom_right div{
+    max-width: 200px;
+}
+.footer__bottom_right {
+    display: flex;
+    gap: 2em;
+}
+
+@media only screen and (max-width: 767px) {
+    .footer__top {
+        flex-direction: column;
+        gap: 2em;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .footer__bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer__bottom_right {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0;
+    }
+    .footer__bottom ul li {
+        margin-bottom: 1em;
+    }
+
+    .footer__newsletter input {
+        width: 100%;
+    }
+}
