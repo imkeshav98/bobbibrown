@@ -1,0 +1,168 @@
+body{
+    text-align: center;
+}
+#mainProducts_div{
+    width: 90%;
+    display: flex;
+    padding: 20px;
+    margin: auto;
+    justify-content: space-evenly;
+    /* border: 1px solid red; */
+}
+.imgsection{
+    display: flex;
+    width: 90%;
+    /* border: 1px solid blue; */
+}
+
+.imgsection>div:nth-child(2){
+    /* border: 1px solid blue; */
+    width: 85%;
+}
+.imgsection>div:nth-child(2) img{
+    width: 100%;
+    margin-top: auto;
+}
+.imgsection>div:nth-child(1){
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin-top: 10%;
+}
+.imgsection>div:nth-child(1) img{
+    width: 100%;
+}
+.imgsection button{
+    border: none;
+}
+.details_section{
+    width: 45%;
+    /* border: 1px solid green; */
+}
+.left_div{
+    width: 40%;
+}
+.details_section{
+    display: flex;
+    justify-content: space-evenly;
+}
+.left_details1{
+    text-align: left;
+}
+.left_details1 b{
+    font-size: 15px;
+    
+}
+.right_details1{
+    text-align: right;
+}
+.flexdiv{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
+}
+.flexdiv>div:nth-child(1){
+    width: 40%;
+    text-align: left;
+    font-size: 18px;
+}
+.flexdiv>img{
+    width: 40%;
+}
+.icons_sec{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    
+}
+.icons_in_icons_sec{
+    padding: 15px 3px;
+   font-size: 30px;
+}
+.theflex{
+    display: flex;
+    margin: auto;
+}
+.eye_face{
+    width:20%;
+    margin:0px auto 10px;
+    text-align:center;
+    font-size: 15px;
+    padding: 10px;
+}
+#left_btn, #right_btn{
+    width: 50%;
+    border:none
+}
+.eye_face_images{
+    width: 60%;
+    display: flex;
+    margin: auto;
+}
+.eye_face_images>div:nth-child(1){
+    width: 100%;
+    height: 500px;
+    background-image: url('https://www.bobbibrown.in/media/export/cms/collections/VEEB/FY21_VEEB_Comparison_VEEB1_PC.jpg'),url("https://www.bobbibrown.in/media/export/cms/collections/VEEB/FY21_VEEB_Comparison_VEEB3_PC.jpg");
+    background-size: contain, contain;
+    background-repeat: no-repeat, no-repeat;
+    background-position: left, right;
+}
+.eye_face_images img{
+    width: 25%;
+    height: 50%;
+    margin: 18% auto;
+}
+#skin_loving_ing{
+    width: 60%;
+    height: 500px;
+    justify-content: space-between;
+}
+#skin_loving_ing>img{
+    width: 30%;
+}
+.headings{
+    font-size: 60px; 
+    margin:2% auto 3%
+}
+.rating_section{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    /* border: 1px solid red; */
+    margin: auto;
+    padding: 10px;
+    text-align: left;
+}
+.rating_section>div:nth-child(1){
+    width: 20%;
+    /* border: 1px solid blue; */
+}
+.rating_section>div:nth-child(2){
+    width: 70%;
+    text-align: center;
+}
+.rating_section table{
+    width: 100%;
+    margin-bottom: 2px;
+}
+.rating_section>div:nth-child(3){
+    width: 20%;
+}
+.all_reviews{
+    width: 70%;
+    /* padding: 20px; */
+    margin: auto;
+}
+.review_content{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.25px solid grey;
+    padding: 20px;
+    text-align: left;
+}
+.review_content>div:nth-child(1){
+    width: 80%;
+}
+
