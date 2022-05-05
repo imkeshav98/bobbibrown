@@ -1,6 +1,6 @@
 import IM1 from "../../../assets/SS21_effortlesseyes.webp";
 import IM2 from "../../../assets/SS21_fiveminutemakeup.webp";
-import IM3 from "../../../assets/SS21_findyourfoundation.webp";
+// import IM3 from "../../../assets/SS21_findyourfoundation.webp";
 import IM4 from "../../../assets/BB_PC2.gif";
 
 export const sessionSData = [

@@ -12,8 +12,8 @@ export const FeaturedSection1 = () => {
         <img src={featuredData1.image} alt="" />
       </div>
       <div className="featuredSection1__right">
-        {featuredData1.details.map((e) => (
-          <div>
+        {featuredData1.details.map((e, i) => (
+          <div key={i}>
             <h5>{e.heading}</h5>
             <p>{e.description}</p>
             <span>{"Shop Now"}</span>

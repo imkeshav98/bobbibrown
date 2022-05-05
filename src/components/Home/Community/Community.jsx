@@ -16,8 +16,8 @@ export const Community = () => {
         #BobbiBrown to share.
       </p>
       <div className="siteCom__card">
-        {comData.map((e) => (
-          <div className="card-container">
+        {comData.map((e, i) => (
+          <div className="card-container" key={i}>
             <div className="card-image">
               <img src={e.image} alt="img" />
             </div>
