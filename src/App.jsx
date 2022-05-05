@@ -1,11 +1,28 @@
 import React from "react";
-import {ProductDetails} from './components/ProductDetails/ProductDetails'
-import './App.css';
-import 'antd/dist/antd.css'
+import "./App.css";
 import { Footer } from "./components/Global/Footer/Footer";
 import { Routing } from "./routes/Routes";
+import { useDispatch } from "react-redux";
+import { handleData } from "./Redux/ProductData/actions";
+import axios from "axios";
+import { useEffect } from "react";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getData();
+    return () => {};
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const getData = () => {
+    axios.get("https://bobbi-brown-api.herokuapp.com/product").then((res) => {
+      const data = res.data;
+      dispatch(handleData(data));
+    });
+  };
+
   return (
     <>
       <Routing />

@@ -11,8 +11,8 @@ export const BookSession = () => {
         help with complimentary video sessions.
       </p>
       <div className="sessions_container">
-        {sessionSData.map((e) => (
-          <div className="session_container">
+        {sessionSData.map((e, i) => (
+          <div className="session_container" key={i}>
             <img src={e.image} alt="img" />
             <span>{e.time}</span>
             <h2>{e.heading}</h2>
