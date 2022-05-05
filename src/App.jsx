@@ -1,5 +1,7 @@
 import React from "react";
-import "./App.css";
+import {ProductDetails} from './components/ProductDetails'
+import './App.css';
+import 'antd/dist/antd.css'
 import { Footer } from "./components/Global/Footer/Footer";
 import { Routing } from "./routes/Routes";
 
