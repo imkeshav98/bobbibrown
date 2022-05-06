@@ -1,0 +1,29 @@
+.product___page {
+    box-sizing: border-box;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    max-width: 1050px;
+    margin: auto;
+    text-align: center;
+    min-height: 62vh;
+}
+
+.product___page img {
+    width: 100%;
+}
+.Product___sort {
+    display: flex;
+    justify-content: flex-end;
+    padding: 3em 2em;
+}
+
+.Product___sort select {
+    border: 1px solid black;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+.Product___sort select:focus {
+    outline: none;
+}
