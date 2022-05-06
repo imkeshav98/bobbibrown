@@ -112,7 +112,7 @@ const IconFont = createFromIconfontCN({
 export const ProductDetails = () => {
   // console.log(Review);
   const [imgsrc, setImgsrc] = useState(
-    "https://www.bobbibrown.in/media/export/cms/products/v2_1080x1080/bb_sku_E1LM01_1080x1080_0.jpg"
+    "https://www.bobbibrown.in/media/export/cms/products/v2_1080x1080/bb_sku_E1LM01_1080x1080_0.jpg" //USE PRODUCTS IMAGE HERE
   );
 
   const handleImg = (e) => {

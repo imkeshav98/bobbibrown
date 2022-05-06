@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "product":[{
+    "url":"https://www.bobbibrowncosmetics.com/media/export/cms/products/80x80/bb_prod_E1LM01_80x80_0.jpg",
+    "name":"VITAMIN ENRICHED FACE BASE",
+    "price":54
+},
+{
+    "url":"https://www.bobbibrowncosmetics.com/media/export/cms/products/80x80/bb_prod_EREP01_80x80_0.jpg",
+    "name":"VITAMIN ENRICHED FACE BASE",
+    "price":54
+}]
+}
