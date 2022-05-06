@@ -1,0 +1,20 @@
+.product___card * {
+    margin: 0;
+}
+
+.product___card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    padding:  0em 0em 1em;
+}
+
+.product___card span{
+    font-weight: 500;
+}
+
+.product___card h3 {
+    font-weight: 600;
+}
