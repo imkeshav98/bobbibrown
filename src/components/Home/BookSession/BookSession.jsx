@@ -15,7 +15,7 @@ export const BookSession = () => {
           <div className="session_container" key={i}>
             <img src={e.image} alt="img" />
             <span>{e.time}</span>
-            <h2>{e.heading}</h2>
+            <h5>{e.heading}</h5>
             <p>{e.description}</p>
             <button>BOOK NOW</button>
           </div>

@@ -159,7 +159,7 @@ export const ProductDetails = () => {
         <div className="details_section">
           <div className="left_details1">
             <p style={{ color: "red" }}>Our #1 Moisturizer</p>
-            <h3>VITAMIN ENRICHED FACE BASE</h3> {/*PRODUCT TITLE HERE*/}
+            <h4>VITAMIN ENRICHED FACE BASE</h4> {/*PRODUCT TITLE HERE*/}
             <p>Moisturizer and primer in one</p>
             <p>Category</p>
             <p>
@@ -261,7 +261,7 @@ export const ProductDetails = () => {
       </div>
 
       <div>
-        <h1 className="headings">TESTED AND PROVEN</h1>
+        <h4 className="headings">TESTED AND PROVEN</h4>
         <div className="flexdiv">
           <div>
             <p>Vitamin Enriched Face Base</p>
@@ -286,7 +286,7 @@ export const ProductDetails = () => {
           <img src="https://www.bobbibrown.in/media/export/cms/38731/Hp_module_PC.jpg"></img>
         </div>
         <div>
-          <h1 className="headings">LIKE A MULTIVITAMIN FOR SKIN</h1>
+          <h4 className="headings">LIKE A MULTIVITAMIN FOR SKIN</h4>
           <div className="theflex" style={{ width: "35%" }}>
             <button id="left_btn" onClick={handlecontent}>
               NEW ENRICHED VITAMIN EYE BASE
@@ -309,7 +309,7 @@ export const ProductDetails = () => {
           </div>
         </div>
         <div>
-          <h1 className="headings">DISCOVER HE SKIN LOVING INGREDIENTS</h1>
+          <h4 className="headings">DISCOVER HE SKIN LOVING INGREDIENTS</h4>
           <div className="theflex" id="skin_loving_ing">
             <img src="https://www.bobbibrown.in/media/export/cms/38731/module_1.jpg"></img>
             <img src="https://www.bobbibrown.in/media/export/cms/38731/module_2.jpg"></img>
@@ -317,11 +317,11 @@ export const ProductDetails = () => {
           </div>
         </div>
         <div>
-          <h1 className="headings">YOU MAY ALSO LIKE</h1>
+          <h4 className="headings">YOU MAY ALSO LIKE</h4>
           {/* MAP PRODUCTS AND STORE IN SLIDER */}
         </div>
         <div>
-          <h1 className="headings">CUSTOMER'S REVIEW</h1>
+          <h4 className="headings">CUSTOMER'S REVIEW</h4>
           <b>CUSTOMER'S REVIEWS</b>
           <div className="rating_section">
             <div>
@@ -415,9 +415,9 @@ export const ProductDetails = () => {
                     <StarFilled />
                   </>
                 )}
-                <h3>
+                <h4>
                   <b>{e.title}</b>
-                </h3>
+                </h4>
                 <br></br>
                 <p>{e.body}</p>
                 {e.response ? (

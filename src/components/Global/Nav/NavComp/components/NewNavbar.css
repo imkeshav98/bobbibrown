@@ -1,0 +1,70 @@
+.NewNavbar_box{
+    width:100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    min-height: 37vh;
+    display:flex;
+    z-index: 2;
+    position:absolute;
+    background-color: white;
+    margin-top: 0px;
+}
+.InsideBoxOfNewNavbar{
+    width:35%;
+    height:70%;
+    margin:15px;
+    text-align: center;
+}
+.InsideBoxOfNewNavbarImg{
+    width:100%;
+}
+.DivForMargin{
+    width:85%;
+    display:flex;
+    /* border:2px solid red; */
+    margin:auto;
+
+}
+.InsideBoxOfNewNavbarHavingText{
+    width:35%;
+    height:70%;
+    margin:15px;
+    /* text-align: center; */
+    list-style-type: none;
+}
+.InsideBoxOfNewNavbarHavingText li{
+    list-style-type: none;
+    margin-top: 3px;
+    margin-bottom: 3px;;
+}
+.DivForMargin {
+    animation: fadeIn 2s;
+    -webkit-animation: fadeIn 2s;
+    -moz-animation: fadeIn 2s;
+    -o-animation: fadeIn 2s;
+    -ms-animation: fadeIn 2s;
+  }
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  
+  
+  
+  

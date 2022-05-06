@@ -6,6 +6,9 @@ import { useDispatch } from "react-redux";
 import { handleData } from "./Redux/ProductData/actions";
 import axios from "axios";
 import { useEffect } from "react";
+import { Navbar } from "./components/Global/Nav/NavComp/components/Navbar";
+// import {Navbar} from "./components/Global/Nav/NavComp/Navbar";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -25,6 +28,7 @@ function App() {
 
   return (
     <>
+<Navbar/>
       <Routing />
       <Footer />
     </>

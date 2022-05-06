@@ -1,0 +1,84 @@
+.Signup_div{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    width:430px;
+    min-height: 72vh;
+    /* text-align: center; */
+    padding-left:40px;
+    padding-top: 30px;
+    color: black;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 2;
+    margin-top: -60px;
+    position:absolute;
+    margin-left: 60px;
+    
+
+}
+.inputOfSignUp{
+    width: 350px;
+    height:50px;
+    text-align: center;
+    color:black;
+    font-size: 18px;
+    /* border: 2px solid red; */
+}
+.inputOfSignUp:hover{
+    width: 350px;
+    height:50px;
+    text-align: center;
+    color:black;
+    font-size: 18px;
+    border: 2px solid  rgb(223, 62, 115);
+}
+.inputMonthSelect{
+    display:flex;
+    /* border: 2px solid yellow; */
+    justify-content: space-between;
+    width: 350px;
+}
+.selecttagOFInput{
+    overflow: scroll;
+    width: 160px;
+}
+.submitbuttonSignUp{
+    width: 350px;
+    background-color: black;
+    color:white;
+    height: 50px;
+    font-size: 18px;
+
+}
+.submitbuttonSignUp:hover{
+    width: 350px;
+    background-color: rgb(223, 62, 115);
+    color:white;
+    height: 50px;
+    font-size: 20px;
+    border : 1px solid rgb(223, 62, 115);
+}
+.WeLoveBirthday{
+    font-weight: 600;
+}
+.arrow {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: -8px;
+    left: 80px;
+    background-color:white;
+    transform: rotate(45deg);
+ 
+    transition: 0.3s;
+    border-top: 1px solid grey;
+ 
+  
+}
+.crossIcon{
+    margin-left: 87%;
+    /* border: 2px solid red; */
+    display:inline;
+}
+.hidden{
+    display:none;
+}

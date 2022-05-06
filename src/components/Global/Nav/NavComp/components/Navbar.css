@@ -1,0 +1,205 @@
+.hidden{
+    display:none;
+}
+.BobbiBrownHavingWhole_Navbar{
+    width:100%;
+    min-height: 20vh;
+    background-color: black;
+    padding-top: 2%;
+}
+.BobiBrownNavbar_topPortion_HavingLogo{
+    background-color: black;
+    width:100%;
+    height: 10vh;
+    display:flex;
+    justify-content: space-between;
+    /* margin-top: 2%; */
+    /* border: 2px solid yellow; */
+    margin:auto;
+    padding-left: 7%;
+    padding-right: 2%;
+    
+}
+.BobiBrownNavbar_signUpLogo{
+    color:white;
+    font-size: 17px;
+    /* font-weight:; */
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 5px;
+    /* border: 2px solid yellow; */
+    height:60px;
+    /* z-index: 2; */
+    cursor:pointer;
+    /* position: absolute; */
+    /* display: inline; */
+}
+.BobiBrownNavbar_BobiBrownLogo{
+width: 25%;
+height:5vh;    
+  /* border: 2px solid yellow;  */
+  text-align: end;
+
+}
+.BobiBrownNavbar_BobiBrownLogo_Img{
+    width: 90%;
+height:100%;    
+}
+.BobbiBrownNavbar_rightpartOfNavbarHavingCart{
+    width:15%;
+    height:6vh;
+    /* border: 2px solid yellow; */
+    color:white;
+    margin-top: 5px;
+    /* font-family: 'Bebas Neue', cursive; */
+    display:flex;
+    justify-content: space-around;
+}
+.LocationIcon{
+    width:30px;
+    height:50px;
+    /* border: 2px solid yellow; */
+}
+.BobbiBrown_SearchBar{
+    display:flex;
+    background-color: black;
+    border-bottom: 1px solid white;
+    height:5vh;
+    color:grey;
+    width:12%;
+    z-index: 1;
+    /* border:2px solid yellow; */
+}
+.BobbiBrown_inputSearch{
+    background-color: black;
+    /* border:1px solid yellow; */
+    color: white;
+    font-weight: 500;
+    /* background-color: transparent; */
+    background-color: transparent;
+    border: 0px solid;
+    height: 20px;
+    width: 160px;
+    /* color: #CCC; */
+    outline-width: 0;
+
+}
+.NavbarChoices{
+    display:flex;
+    color:white;
+    /* border:1px solid yellow; */
+    width:800px;
+    justify-content: space-between;
+    cursor:pointer;
+
+}
+.BobbiBrownNavbar_SearchPart{
+    display:flex;
+/* border: 2px solid green; */
+width:80%;
+justify-content: space-around;
+/* margin-top: 0.2%; */
+
+}
+
+
+.arrow {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    top: -5.5px;
+    left: 32px;
+    background-color: white;
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: 0.3s;
+  
+}
+
+
+.nav-box:hover>.dropdown,.dropdown-link:hover>.dropdown{
+transform: translate(0,0);
+opacity:1;
+pointer-events: auto;
+/* margin-left: -350px; */
+/* position:relative; */
+}
+.hiddenBoxofSignUp{
+    cursor: pointer;
+}
+.underLine{
+    text-decoration: underline;
+}
+.NavbarChoiceElement{
+    /* border:1px solid yellow; */
+    height:50px;
+}
+.searchDebouncing{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    width:350px;
+    height: 60vh;
+    /* text-align: center; */
+    /* padding-left:40px;
+    padding-top: 30px; */
+    color: black;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 2;
+    margin-top: 0px;
+    position:absolute;
+    margin-left: 60px;
+    padding:10px;
+    overflow-y: scroll;
+    
+}
+.debouncingimg{
+    width:100px;
+    height:100px;
+}
+.debouncingDiv{
+    display:flex;
+    border: 1px solid black
+}
+.debouncingPTag{
+    margin-top: -30px;
+}
+.debouncingPTagpage{
+    color:rgb(216,71,87)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

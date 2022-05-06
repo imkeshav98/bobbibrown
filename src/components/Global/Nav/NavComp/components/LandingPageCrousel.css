@@ -1,0 +1,48 @@
+.LandingPageCrouselImg{
+    width:100%;
+    height:75vh;
+}
+.LandingPageCrousel{
+    position : relative;
+    color:white;
+    
+}
+.bottom-left {
+    position: absolute;
+    bottom: 150px;
+    left: 8%;
+  }
+  .EnrichedEyebaseButton{
+      margin-top: 40px;
+      color:black;
+      background-color: white;
+      min-width: 150px;
+      height:40px;
+      font-weight: 600;
+  }
+  .EnrichedEyebaseButton:hover{
+    margin-top: 40px;
+    color:white;
+    background-color: grey;
+    min-width: 150px;
+    height:40px;
+    font-weight: 600;
+}
+.LandingPageCrouselgif{
+    width:100%;
+    /* background-image: url("gifCarousel.gif"); */
+    /* border: 3px solid red; */
+    position : relative;
+    color:white;
+}
+.bottom-leftVideo{
+    position: absolute;
+    bottom: 150px;
+    left: 40%;
+    margin:auto;
+    text-align: center;;
+}
+ /* .slick-next{
+background-color: aqua;
+border: 3px solid red;
+} */
