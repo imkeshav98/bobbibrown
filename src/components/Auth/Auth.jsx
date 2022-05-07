@@ -35,8 +35,8 @@ export const Auth = () => {
       .then(function (response) {
         localStorage.setItem("Userdata", JSON.stringify(response.data.user));
         localStorage.setItem("UserToken", JSON.stringify(response.data.token));
-        console.log(response.data);
-        dispatch(userLogin(response.data.token));
+        // console.log(response.data);
+        dispatch(userLogin(true));
         navigate("/");
       })
       .catch(function (error) {
@@ -63,9 +63,8 @@ export const Auth = () => {
         localStorage.setItem("Userdata", JSON.stringify(res.data.user));
         localStorage.setItem("UserToken", JSON.stringify(res.data.token));
         dispatch(userLogin(res.data.token));
-        if (res.data.length === 0) {
-          return alert("email or password should be fill");
-        } else dispatch(userLogin(true));
+        dispatch(userLogin(true));
+        navigate("/");
       });
   };
   return (
@@ -101,7 +100,7 @@ export const Auth = () => {
                 />
               </div>
               <div className="forgetpass">
-                <a>Forgot your password?</a>
+                <a href="#">Forgot your password?</a>
               </div>
               <div>
                 <input
