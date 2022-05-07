@@ -7,6 +7,7 @@ import { handleData } from "./Redux/ProductData/actions";
 import axios from "axios";
 import { useEffect } from "react";
 import { Navbar } from "./components/Global/Nav/NavComp/components/Navbar";
+import {Auth} from "./components/Auth/Auth"
 // import {Navbar} from "./components/Global/Nav/NavComp/Navbar";
 
 function App() {
