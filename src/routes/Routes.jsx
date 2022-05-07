@@ -6,7 +6,6 @@ import { Products } from "../components/Products/Products";
 import { Auth } from "../components/Auth/Auth";
 import { Checkout } from "../components/Checkout/Checkout"; //FOR CHECKING PURPOSE
 
-
 export const Routing = () => {
   return (
     <>

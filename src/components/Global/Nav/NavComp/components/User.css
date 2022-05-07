@@ -7,7 +7,7 @@
  
 text-align: left;
 /* padding-left:15px; */
-    z-index: 2;
+    z-index: 3;
     position:absolute;
     overflow: scroll;
     margin-left:73%;
@@ -78,7 +78,7 @@ text-align: left;
     position: absolute;
     width: 15px;
     height: 15px;
-    top: 88px;
+    top: 84px;
     left: 1434px;
     /* margin-right: 200px; */
     background-color:white;
