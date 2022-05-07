@@ -157,7 +157,8 @@ pointer-events: auto;
 }
 .debouncingDiv{
     display:flex;
-    border: 1px solid black
+    border-bottom: 2px solid rgb(184, 180, 180)
+    
 }
 .debouncingPTag{
     margin-top: -30px;
