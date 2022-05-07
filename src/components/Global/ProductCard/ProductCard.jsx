@@ -1,8 +1,25 @@
+// import axios from "axios";
 import { Link } from "react-router-dom";
 import { ButtonStyled } from "../../../Styled/Button";
 import "./productcard.css";
 
 export const ProductCard = ({ info }) => {
+  const addtocart = async (product_id) => {
+    let token = JSON.parse(localStorage.getItem("UserToken"));
+    console.log(product_id);
+    fetch(`https://bobbi-brown-api.herokuapp.com/cart/add/${product_id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+    })
+      .then((res) => res.json())
+      .then((cart) =>
+        localStorage.setItem("Userdata", JSON.stringify(cart.user))
+      );
+  };
+
   return (
     <div className="product___card">
       <Link to={`/products/${info.page}/${info.id}`}>
@@ -11,7 +28,14 @@ export const ProductCard = ({ info }) => {
       <span>{info.name}</span>
       <p>{info.tag}</p>
       <span>${info.price}</span>
-      <ButtonStyled size="medium">ADD TO BAG</ButtonStyled>
+      <ButtonStyled
+        size="medium"
+        onClick={() => {
+          addtocart(info.id);
+        }}
+      >
+        ADD TO BAG
+      </ButtonStyled>
     </div>
   );
 };

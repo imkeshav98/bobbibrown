@@ -15,7 +15,7 @@ export const Products = () => {
   }, [allProducts]);
 
   const filterProduct = () => {
-    filteredProduct = allProducts.filter((e) => e.page == page);
+    filteredProduct = allProducts.filter((e) => e.page === page);
     if (filteredProduct.length > 0) {
       setProduct(filteredProduct);
     }

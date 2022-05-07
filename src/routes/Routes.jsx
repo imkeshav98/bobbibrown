@@ -5,7 +5,8 @@ import { ProductDetails } from "../components/ProductDetails/ProductDetails";
 import { Products } from "../components/Products/Products";
 import { Auth } from "../components/Auth/Auth";
 import { Checkout } from "../components/Checkout/Checkout"; //FOR CHECKING PURPOSE
-
+import { Cart } from "../components/Cart/Cart";
+import { PrivateRoute } from "./PrivateRoutes";
 
 export const Routing = () => {
   return (
@@ -16,8 +17,22 @@ export const Routing = () => {
         <Route path="/products/:page" element={<Products />}></Route>
         <Route path="/products/:page/:_id" element={<ProductDetails />}></Route>
         <Route path="/login" element={<Auth />}></Route>
-        {/* <Route path="/cart" element={<Cart/>}></Route> */}
-        <Route path="/checkout" element={<Checkout></Checkout>}></Route>
+        <Route
+          path="/cart"
+          element={
+            <PrivateRoute>
+              <Cart />
+            </PrivateRoute>
+          }
+        ></Route>
+        <Route
+          path="/checkout"
+          element={
+            <PrivateRoute>
+              <Checkout />
+            </PrivateRoute>
+          }
+        ></Route>
       </Routes>
     </>
   );
