@@ -319,7 +319,7 @@ export function Navbar() {
 
                 {
                     product.map(e => (
-                        <div className='debouncingDiv'>
+                        <div className='debouncingDiv py-3'>
                             {/* //for appending img */}
                             <div>
                                 <img className="debouncingimg"src={e.Image} alt="" />
