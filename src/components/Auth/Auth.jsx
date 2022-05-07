@@ -58,13 +58,12 @@ export const Auth = () => {
     e.preventDefault();
     axios.post("https://bobbi-brown-api.herokuapp.com/login", login)
       .then((res) => {
-        
+        console.log(res.data.user.email)
         localStorage.setItem("Userdata", JSON.stringify(res.data.user));
         localStorage.setItem("UserToken", JSON.stringify(res.data.token));
         dispatch(userLogin(res.data.token));
-        if (res.data.length === 0) {
-          return alert("email or password should be fill");
-        } else dispatch(userLogin(true));
+        dispatch(userLogin(true));
+        navigate("/");
       });
   };
   return (
