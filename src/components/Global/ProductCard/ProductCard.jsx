@@ -1,24 +1,23 @@
-import axios from "axios";
+// import axios from "axios";
 import { Link } from "react-router-dom";
 import { ButtonStyled } from "../../../Styled/Button";
 import "./productcard.css";
 
 export const ProductCard = ({ info }) => {
-  const getToken = () => {
-    let token = JSON.parse(localStorage.getItem("Usertoken")) || "";
-    let config = {
-      headers: { Authorization: `Bearer ${token}` },
-    };
-    return config;
-  };
-
-  const addtocart = (product_id) => {
-    axios
-      .post(
-        `https://bobbi-brown-api.herokuapp.com/cart/add/${product_id}`,
-        getToken()
-      )
-      .then((res) => console.log(res));
+  const addtocart = async (product_id) => {
+    let token = JSON.parse(localStorage.getItem("UserToken"));
+    console.log(product_id);
+    fetch(`https://bobbi-brown-api.herokuapp.com/cart/add/${product_id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+    })
+      .then((res) => res.json())
+      .then((cart) =>
+        localStorage.setItem("Userdata", JSON.stringify(cart.user))
+      );
   };
 
   return (
