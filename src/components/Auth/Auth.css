@@ -1,0 +1,126 @@
+
+
+.Auth{
+  margin: auto;
+  display:flex;
+  padding: 2.5%;
+  justify-content:space-between;
+  /* border: 1px solid red; */
+  width:50%;
+  margin-top: 100px;
+}
+.formleft{
+  width:48%;
+/* border:1px solid rgb(11, 10, 10) */
+border-bottom: 3px solid black;
+}
+.formright {
+    width:48%;
+/* border:1px solid rgb(15, 14, 14); */
+border-bottom: 3px solid black;
+}
+.vertical_lineAuth{
+background-color:black;
+width: 1%;
+height:95%;
+}
+.form{
+  width:100%;
+  height: 40px;
+  margin-top:2%;
+  margin-bottom:2%;
+}
+
+.leftDiv{
+  /* border:1px solid blue; */
+  width: 90%;
+  padding: 3%;
+  margin: auto;
+ 
+}
+.rightDiv {
+  /* border: 1px solid blue; */
+  width: 90%;
+  margin: auto;
+  padding: 3%;
+
+}
+
+.Continueleft{
+  margin-top:5%;
+width:100%;
+padding: 6px;
+background-color: black;
+color:white;
+}
+.Continueright{
+  margin-top:5%;
+  width: 100%;
+  padding: 6px;
+  background-color: black;
+  color: white;
+}
+.monnthnday{
+ width:100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.month{
+margin-left: 10px;
+  width:50%;
+  height:35px;
+}
+.day {
+  margin-left: 10px;
+  width:50%;
+  height:35px;
+}
+.termCond{
+  font-size: 14px;
+color: #ff4661;
+
+font-family: "BBText Regular",
+Helvetica,
+Arial,
+sans-serif;
+
+}
+.forgetpass{
+  color: #ff4661;
+  text-decoration: underline;
+  font-size: 14px
+}
+.section{
+  font-size: 21px;
+  letter-spacing: 4px;
+    line-height: 19px;
+  vertical-align: baseline
+
+}
+.check{
+  margin-top: 10px;
+  font-size: 14px;
+  padding: 2px 0px 0px;
+  line-height: 19px
+}
+.lastdiv{
+  margin : auto;
+  font-size: 18px;
+  padding-bottom: 2.5%;
+  /* border: 1px solid blue; */
+  width:40%;
+}
+.Alreadyhaveacc{
+  letter-spacing: 3px;
+}
+.or{
+display: none;
+}
+@media only screen and (max-width:900px){
+  .Auth{
+    flex-direction: column;
+  }
+  .formright , .formleft{
+width:100%;
+  }
+}
