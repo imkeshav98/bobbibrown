@@ -36,7 +36,7 @@ export const Checkout = () => {
 
 
     const getCartData = async () => {
-        let res = await fetch("http://localhost:8080/product");
+        let res = await fetch("http://localhost:8080/product"); //Api Call for Cart Items
         let data = await res.json();
         setCartData(data);
     }
