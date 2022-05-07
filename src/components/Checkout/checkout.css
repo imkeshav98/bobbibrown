@@ -1,0 +1,93 @@
+#checkout_content{
+    display: flex;
+    width: 60%;
+    margin: auto;
+    /* border: 1px solid red; */
+    padding: 20px;
+    justify-content: space-between;
+}
+#checkout_content h5{
+    margin: 3px;
+}
+.checkout_userdetails{
+    width: 60%;
+    padding: 2.5%;
+    /* border: 1px solid blue; */
+    text-align: left;
+}
+.checkout_productdetails{
+    width: 35%;
+    padding: 2.5%;
+    /* border: 1px solid green; */
+    text-align: left;
+}
+#checkout_content p{
+    font-size: 15px;
+}
+.check_username{
+    display: flex;
+    justify-content: space-between;
+}
+.checkout_userdetails form input{
+    padding: 12px 10px;
+    border: 1.5px solid black;
+    margin:1% 0px;
+}
+
+.check_username>input{
+    width: 45%;
+}
+.zip_city_state{
+    display: flex;
+    justify-content: space-between;
+}
+.zip_city_state>input{
+    width: 25%;
+}
+.apply_btn{
+    background-color: black;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px;
+    color: white;
+}
+.shipping_address{
+    margin: 1px;
+}
+
+.payment_cards_pic{
+    width:40%;
+    display:flex; 
+    justify-content:space-between; 
+    padding:8px
+}
+.flex_table{
+    display: flex;
+    font-size: 12px;
+    /* justify-content: space-evenly; */
+}
+.flex_table b{
+    font-size: 12px;
+}
+.flex_table>div:nth-child(1){
+    width: 70%;
+    padding: 5px;
+}
+.flex_table>div:nth-child(2),.flex_table>div:nth-child(3){
+    padding: 3%;
+    width: 15%;
+    /* border: 1px solid red; */
+    align-items: center;
+}
+.flex_table select{
+    width: 70%;
+    margin: auto;
+}
+.image_name{
+    display: flex;
+    justify-content: space-around;
+}
+#subtotal{
+    display: flex;
+    justify-content: space-between;
+}

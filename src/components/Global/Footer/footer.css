@@ -44,7 +44,7 @@ footer {
     margin: 5px;
 }
 
-::placeholder {
+.footer__newsletter>::placeholder {
     color: rgba(255, 255, 255, 0.893);
 }
 
