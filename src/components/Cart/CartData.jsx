@@ -1,12 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 import "./cart.css";
 
-export const CartData = (data, i) => {
+export const CartData = (data, quantityy, i) => {
   // const [qty, setQty] = useState(1);
   // const handleQty = (e) => {
   //   setQty(e.target.value);
   // };
+  //productId:data, qty
+  const getCartElement = async()=>{
+    let res= await fetch(`https://bobbi-brown-api.herokuapp.com/product/product/${data.data}`);
+    let element_data= await res.json();
+    setCartElement(element_data)
+  }
+  // {"Product":{"_id":"6270c0fc5bb7242fde5f993f","Image":"https://www.bobbibrowncosmetics.com/media/export/cms/products/600x600/bb_sku_EGXR04_600x600_0.jpg","name":"SKIN LONG-WEAR WEIGHTLESS FOUNDATION","tag":"16-hour, breathable, natural matte coverage","price":44,"page":"face"}}
+  console.log("productId", quantityy)
+  const [cartElement, setCartElement]=useState({
+    Product:{
+      Image:"",
+      name:"",
+      tag:"",
+      price:"",
+      page:""
+    }
+   
+  });
+
+  useEffect(()=>{
+    getCartElement()
+  }, [])
+  console.log('cartElement',cartElement)
+
   const [form_subscription, setSubscription] = useState({
     subscription: false,
     value: "",
@@ -23,10 +48,10 @@ export const CartData = (data, i) => {
     <div>
       <div key={i} className="flex_table">
         <div className="image_name">
-          <img src={Image} alt=""></img>
+          <img src={cartElement.Product.Image} alt=""></img>
           <div>
             <p>
-              <b>{}</b>
+              <b>{cartElement.Product.name}</b>
               {/* name */}
             </p>
             <p
@@ -48,7 +73,7 @@ export const CartData = (data, i) => {
             <option value="3">3</option>
           </select>
         </div>
-        <div>{}</div>
+        <div>${cartElement.Product.price}</div>
         {/* price */}
         <div>{}</div> {/* price * qty */}
       </div>

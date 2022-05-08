@@ -7,6 +7,7 @@ export const Cart = () => {
   let cartItems = useSelector((store) => store.loginData.payload);
   const [cartData, setCartData] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  // console.log('cartItemsssss',cartItems)
 
   useEffect(() => {
     if (cartItems !== undefined) {
@@ -50,7 +51,7 @@ export const Cart = () => {
           <hr></hr>
           {cartData.map((e, i) => {
             // let sum=0;
-            return <CartData data={e} i={i}></CartData>;
+            return <CartData data={e.productId} quantityy={e.qty} i={i}></CartData>;
           })}
           <div>
             <Subtotal data={totalPrice}></Subtotal>
