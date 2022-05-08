@@ -19,7 +19,6 @@ export default function Signup() {
           <FiX />
         </IconContext.Provider>
       </div>
-
       <h2 style={{ marginTop: "-30px" }}>SIGN UP NOW</h2>
       <h6>
         Sign up for emails and be the first to know

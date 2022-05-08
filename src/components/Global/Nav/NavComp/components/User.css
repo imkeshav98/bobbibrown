@@ -1,11 +1,11 @@
 .userbox{
-    width:390px;
+    width:20rem;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     background-color: white;
     text-align: left;
     z-index: 3;
     position:absolute;
-    overflow: scroll;
+    overflow: hidden;
     top: 4.5rem;
     right: 2%;
     border: 1px solid black;
@@ -13,6 +13,8 @@
 }
 .upperPortionOfUserBox{
     margin-top: -20px;
+    width: 99%;
+    margin-left: 0.5em;
 }
 .crossIcon{
     margin-left: 87%;

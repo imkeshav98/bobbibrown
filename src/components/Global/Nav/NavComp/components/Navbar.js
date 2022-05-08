@@ -6,7 +6,7 @@ import { BsBag } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import Signup from "./Signup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./SignUp.css";
 import Bbaccess from "./Bbaccess";
 import "./User.css";
@@ -24,6 +24,7 @@ import { useSelector } from "react-redux";
 var originalArr = [];
 export function Navbar() {
   // /for debouncing
+  const navigate = useNavigate();
 
   const [product, setProduct] = useState([]);
   const [cartCount, setCartCount] = useState(0);
@@ -233,9 +234,11 @@ export function Navbar() {
               onMouseOver={unHideUserBox}
               onMouseLeave={hideUserBox}
             >
-              <Link to="/login">
-                <AiOutlineUser />
-              </Link>
+              <AiOutlineUser
+                onClick={() => {
+                  logCheck === false ? navigate("/login") : navigate("#");
+                }}
+              />
             </div>
             <Link to="/cart">
               <div className="LocationIcon">
