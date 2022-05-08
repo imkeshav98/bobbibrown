@@ -39,20 +39,19 @@ export const ChekoutProducts = (data, i) => {
         </div>
     )
 }
-export const Subtotal=()=>{
+export const Subtotal=({data})=>{
+    // console.log(totalprice)
     return (
         <div id="subtotal">
                     <div>
-                        <p>Subotal</p>
+                        <p>Subtotal</p>
                         <p>Shipping</p>
-                        <p>Discount</p>
                         <h4>SUBTOTAL</h4>
                     </div>
                     <div>
-                        <p>Rs</p>
+                        <p>${data}</p>
                         <p>FREE</p>
-                        <p>15%</p>
-                        <h4>Rs</h4>
+                        <h4>${data}</h4>
                     </div>
                 </div>
     )

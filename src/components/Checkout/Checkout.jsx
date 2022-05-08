@@ -158,7 +158,7 @@ export const Checkout = () => {
                         )
                     })}
                     <hr></hr>
-                    <Subtotal></Subtotal>
+                    <Subtotal data={totalPrice}></Subtotal>
                     <hr></hr>
                     <p style={{ width: '70%' }}>Afterpay cannot be used to purchase backordered, pre-ordered or auto-replenishment products, donations or gift cards </p>
                     <h5>OFFER CODE</h5>
