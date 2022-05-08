@@ -1,59 +1,40 @@
-import { useState, useEffect } from "react";
-export const ChekoutProducts = (data,qty, i) => {
-    // const [qty, setQty] = useState(1);
-    console.log(data, qty, i)
-    const getCartElement = async()=>{
-        let res= await fetch(`https://bobbi-brown-api.herokuapp.com/product/product/${data.data}`);
-        let element_data= await res.json();
-        setCartElement(element_data)
-      }
-
-
-      const [cartElement, setCartElement]=useState({
-        Product:{
-          Image:"",
-          name:"",
-          tag:"",
-          price:"",
-          page:""
-        }
-       
-      });
-    //   console.log(data)
-
-      useEffect(()=>{
-        getCartElement()
-      }, [])
-
-    return (
-        <div>
-            <div key={i} className="flex_table">
-                <div className="image_name">
-                    <img src={cartElement.Product.Image}></img>
-                    <div><p><b>{cartElement.Product.name}</b></p>
-                        <p>{data.qty}</p>
-                    </div>
-                </div>
-                <div><p>{`$${cartElement.Product.price}`}</p></div>
-                <div><p>{`$${cartElement.Product.price * data.qty}`}</p></div>
-            </div>
+export const ChekoutProducts = (data, qty, i) => {
+  return (
+    <div>
+      <div key={i} className="flex_table">
+        <div className="image_name">
+          <img src={data.data.Image} alt="productPic"></img>
+          <div>
+            <p>
+              <b>{data.data.name}</b>
+            </p>
+            <p>{data.qty}</p>
+          </div>
         </div>
-    )
-}
-export const Subtotal=({data})=>{
-    // console.log(totalprice)
-    return (
-        <div id="subtotal">
-                    <div>
-                        <p>Subtotal</p>
-                        <p>Shipping</p>
-                        <h4>SUBTOTAL</h4>
-                    </div>
-                    <div>
-                        <p>${data}</p>
-                        <p>FREE</p>
-                        <h4>${data}</h4>
-                    </div>
-                </div>
-    )
-}
+        <div>
+          <p>{`$${data.data.price}`}</p>
+        </div>
+        <div>
+          <p>{`$${data.data.price * data.qty}`}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+export const Subtotal = ({ data }) => {
+  // console.log(totalprice)
+  return (
+    <div id="subtotal">
+      <div>
+        <p>Subtotal</p>
+        <p>Shipping</p>
+        <h4>SUBTOTAL</h4>
+      </div>
+      <div>
+        <p>${data}</p>
+        <p>FREE</p>
+        <h4>${data}</h4>
+      </div>
+    </div>
+  );
+};

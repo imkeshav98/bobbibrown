@@ -1,37 +1,59 @@
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../../Redux/Login/action";
 import "./cart.css";
 
-export const CartData = (data, quantityy, i) => {
-  // const [qty, setQty] = useState(1);
-  // const handleQty = (e) => {
-  //   setQty(e.target.value);
-  // };
-  //productId:data, qty
-  const getCartElement = async () => {
-    let res = await fetch(
-      `https://bobbi-brown-api.herokuapp.com/product/product/${data.data}`
-    );
-    let element_data = await res.json();
-    setCartElement(element_data);
-  };
-  // {"Product":{"_id":"6270c0fc5bb7242fde5f993f","Image":"https://www.bobbibrowncosmetics.com/media/export/cms/products/600x600/bb_sku_EGXR04_600x600_0.jpg","name":"SKIN LONG-WEAR WEIGHTLESS FOUNDATION","tag":"16-hour, breathable, natural matte coverage","price":44,"page":"face"}}
-  console.log("productId", data.quantityy);
-  const [cartElement, setCartElement] = useState({
-    Product: {
-      Image: "",
-      name: "",
-      tag: "",
-      price: "",
-      page: "",
-    },
-  });
+export const CartData = (data, quantityy, key) => {
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    getCartElement();
-  }, []);
-  console.log("cartElement", cartElement);
+  const deleteFunction = (productID) => {
+    let token = JSON.parse(localStorage.getItem("UserToken"));
+    fetch(`https://bobbi-brown-api.herokuapp.com/cart/delete/${productID}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+    })
+      .then((res) => res.json())
+      .then((cart) => {
+        dispatch(userLogin(cart.user));
+        localStorage.setItem("Userdata", JSON.stringify(cart.user));
+      });
+  };
+
+  const addtocart = (productID) => {
+    let token = JSON.parse(localStorage.getItem("UserToken"));
+    fetch(`https://bobbi-brown-api.herokuapp.com/cart/add/${productID}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+    })
+      .then((res) => res.json())
+      .then((cart) => {
+        dispatch(userLogin(cart.user));
+        localStorage.setItem("Userdata", JSON.stringify(cart.user));
+      });
+  };
+
+  const removecart = (productID) => {
+    let token = JSON.parse(localStorage.getItem("UserToken"));
+    fetch(`https://bobbi-brown-api.herokuapp.com/cart/remove/${productID}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+    })
+      .then((res) => res.json())
+      .then((cart) => {
+        dispatch(userLogin(cart.user));
+        localStorage.setItem("Userdata", JSON.stringify(cart.user));
+      });
+  };
 
   const [form_subscription, setSubscription] = useState({
     subscription: false,
@@ -46,31 +68,15 @@ export const CartData = (data, quantityy, i) => {
   };
 
   // REMOVE FUNCTION
-  // const removeFunction=(data)=>{
-  //   let token = JSON.parse(localStorage.getItem("UserToken"));
-  //   // console.log(product_id);
-  //   fetch(`https://bobbi-brown-api.herokuapp.com/cart/remove/${data}`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: "Bearer " + token,
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((cart) => {
-  //       // dispatch(userLogin(cart.user));
-  //       localStorage.setItem("Userdata", JSON.stringify(cart.user));
-  //     });
-  // }
 
   return (
-    <div>
-      <div key={i} className="flex_table">
+    <div key={key}>
+      <div className="flex_table">
         <div className="image_name">
-          <img src={cartElement.Product.Image} alt=""></img>
+          <img src={data.data.Image} alt=""></img>
           <div>
             <p>
-              <b>{cartElement.Product.name}</b>
+              <b>{data.data.name}</b>
               {/* name */}
             </p>
             <p
@@ -79,7 +85,9 @@ export const CartData = (data, quantityy, i) => {
                 color: "grey",
                 textDecoration: "underline",
               }}
-              // onClick={removeFunction}
+              onClick={() => {
+                deleteFunction(data.data._id);
+              }}
             >
               R E M O V E
             </p>
@@ -95,6 +103,9 @@ export const CartData = (data, quantityy, i) => {
         >
           <button
             style={{ border: "none", fontWeight: "bold", fontSize: "15px" }}
+            onClick={() => {
+              addtocart(data.data._id);
+            }}
           >
             {" "}
             +{" "}
@@ -102,6 +113,9 @@ export const CartData = (data, quantityy, i) => {
           <p style={{ paddingTop: "10px" }}>{data.quantityy}</p>
           <button
             style={{ border: "none", fontWeight: "bold", fontSize: "15px" }}
+            onClick={() => {
+              removecart(data.data._id);
+            }}
           >
             {" "}
             -{" "}
@@ -116,7 +130,7 @@ export const CartData = (data, quantityy, i) => {
             paddingTop: "2em",
           }}
         >
-          <p>${cartElement.Product.price}</p>
+          <p>${data.data.price}</p>
         </div>
         {/* price */}
         <div
@@ -128,7 +142,7 @@ export const CartData = (data, quantityy, i) => {
             paddingTop: "2em",
           }}
         >
-          <p>${cartElement.Product.price * data.quantityy}</p>
+          <p>${data.data.price * data.quantityy}</p>
         </div>{" "}
         {/* price * qty */}
       </div>
