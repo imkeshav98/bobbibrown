@@ -3,14 +3,12 @@
     height: 60vh;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     background-color: white;
-    margin-top: -60px;
- 
-text-align: left;
-/* padding-left:15px; */
-    z-index: 2;
+    text-align: left;
+    z-index: 3;
     position:absolute;
     overflow: scroll;
-    margin-left:73%;
+    top: 4.5rem;
+    right: 2%;
 }
 .upperPortionOfUserBox{
     margin-top: -20px;
@@ -75,32 +73,17 @@ text-align: left;
     border: 1px solid black;
 }
 .arrowOfUser{
-    position: absolute;
     width: 15px;
     height: 15px;
-    top: 88px;
-    left: 1434px;
-    /* margin-right: 200px; */
     background-color:white;
     transform: rotate(45deg);
     cursor: pointer;
     transition: 0.3s;
     border-top: 1px solid grey;
+    position: absolute;
+    top: 4rem;
+    right: 5.5rem;
     z-index: 2;
-
-    /* ////////////////////////// */
-    /* position: absolute;
-    width: 15px;
-    height: 15px;
-   
-    background-color:white;
-    transform: rotate(45deg);
-    cursor: pointer;
-    transition: 0.3s;
-    border-top: 1px solid grey; */
- 
-
-
 }
 .crossIcon{
     margin-left: 87%;

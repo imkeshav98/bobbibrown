@@ -56,7 +56,7 @@ height:100%;
 }
 .LocationIcon{
     width:30px;
-    height:50px;
+    height:80px;
     /* border: 2px solid yellow; */
 }
 .BobbiBrown_SearchBar{
@@ -132,6 +132,7 @@ pointer-events: auto;
 .NavbarChoiceElement{
     /* border:1px solid yellow; */
     height:50px;
+    color: white;
 }
 .searchDebouncing{
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -162,6 +163,7 @@ pointer-events: auto;
 }
 .debouncingPTag{
     margin-top: -30px;
+    color: rgba(0, 0, 0, 0.655);
 }
 .debouncingPTagpage{
     color:rgb(216,71,87)

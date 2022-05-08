@@ -3,16 +3,13 @@
     width:470px;
     min-height: 50vh;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    /* background-color: aquamarine; */
     display:flex;
     padding:10px;
-    margin-top: -60px;
     background-color: white;
-    margin-left: 60%;
-    z-index: 2;
+    z-index: 3;
     position:absolute;
-
-   
+    top: 4.5rem;
+    right: 8%;
 }
 .BbaccessInputEmail{
     border: 1px solid black;
@@ -54,15 +51,13 @@
  /* width: 500px; */
  margin-left: -180px;
 }
-.crossIcon{
-/* border:3px solid red; */
-}
+
 .arrowOfBbaccess{
     position: absolute;
     width: 15px;
     height: 15px;
-    top: 88px;
-    left: 1330px;
+    top: 4rem;
+    right: 12rem;
     /* margin-right: 200px; */
     background-color:white;
     transform: rotate(45deg);

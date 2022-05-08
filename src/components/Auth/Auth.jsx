@@ -38,6 +38,7 @@ export const Auth = () => {
         // console.log(response.data);
         dispatch(userLogin(true));
         navigate("/");
+        window.location.reload();
       })
       .catch(function (error) {
         if (error.response.data) {
@@ -66,6 +67,7 @@ export const Auth = () => {
         dispatch(userLogin(res.data.token));
         dispatch(userLogin(true));
         navigate("/");
+        window.location.reload();
       });
   };
   return (
