@@ -75,7 +75,7 @@ export const CartData = (data, quantityy, i) => {
         </div>
         <div>${cartElement.Product.price}</div>
         {/* price */}
-        <div>{}</div> {/* price * qty */}
+        <div>${cartElement.Product.price}</div> {/* price * qty */}
       </div>
       <form>
         <div style={{ display: "flex", flexDirection: "column" }}>

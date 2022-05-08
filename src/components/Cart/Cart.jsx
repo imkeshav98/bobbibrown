@@ -3,11 +3,16 @@ import { BButton } from "../ProductDetails/styled-components";
 import "./cart.css";
 import { CartData, Subtotal } from "./CartData";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 export const Cart = () => {
+  const navigate= useNavigate();
   let cartItems = useSelector((store) => store.loginData.payload);
   const [cartData, setCartData] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   // console.log('cartItemsssss',cartItems)
+  const proceedtoCheckout=()=>{
+    navigate("/checkout")
+  }
 
   useEffect(() => {
     if (cartItems !== undefined) {
@@ -63,7 +68,7 @@ export const Cart = () => {
           </div>
         </div>
         <div className="cart_summary">
-          <BButton style={{ width: "100%" }}>CHECKOUT</BButton>
+          <BButton onClick={proceedtoCheckout} style={{ width: "100%" }}>CHECKOUT</BButton>
           <div className="flex_table" id="payment_icons">
             <img
               src="https://www.bobbibrowncosmetics.com/media/export/cms/icons/visa_card.svg"

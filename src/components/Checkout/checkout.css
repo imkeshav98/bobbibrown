@@ -1,6 +1,6 @@
 #checkout_content{
     display: flex;
-    width: 60%;
+    width: 70%;
     margin: auto;
     /* border: 1px solid red; */
     padding: 20px;
@@ -64,30 +64,37 @@
 .flex_table{
     display: flex;
     font-size: 12px;
+    border:1px solid green;
+    padding: 0px;
     /* justify-content: space-evenly; */
 }
 .flex_table b{
     font-size: 12px;
 }
 .flex_table>div:nth-child(1){
-    width: 70%;
+    width: 84%;
     padding: 5px;
+    /* border: 1px solid red; */
 }
 .flex_table>div:nth-child(2),.flex_table>div:nth-child(3){
     padding: 3%;
-    width: 15%;
+    width: 8%;
     /* border: 1px solid red; */
     align-items: center;
 }
-.flex_table select{
-    width: 70%;
-    margin: auto;
-}
 .image_name{
+    /* width: 100%; */
     display: flex;
-    justify-content: space-around;
+    justify-content:space-evenly;
 }
 #subtotal{
     display: flex;
     justify-content: space-between;
+}
+.image_name>img{
+    height: 100px;
+    width: 200px;
+}
+.image_name>div{
+    width: 50%;
 }

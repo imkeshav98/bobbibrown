@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import './checkout.css'
 import { ChekoutProducts, Subtotal } from './CheckoutProducts'
 export const Checkout = () => {
+    const navigate = useNavigate();
+    let cartItems = useSelector((store) => store.loginData.payload);
+
     const [checkout_form, setCheckoutForm] = useState({
         first_name: "",
         last_name: "",
@@ -12,6 +17,8 @@ export const Checkout = () => {
         state: "",
         phone: ""
     })
+
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -30,16 +37,18 @@ export const Checkout = () => {
     }
 
     const [cartData, setCartData] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
     useEffect(() => {
-        getCartData();
-    }, []);
-
-
-    const getCartData = async () => {
-        let res = await fetch("http://localhost:8080/product"); //Api Call for Cart Items
-        let data = await res.json();
-        setCartData(data);
-    }
+        if (cartItems !== undefined) {
+          setCartData(cartItems.cart.items);
+        }
+      }, [cartItems]);
+     
+    useEffect(() => {
+        if (cartItems !== undefined) {
+          setTotalPrice(cartItems.cart.totalPrice);
+        }
+      }, [cartItems]);
 
     return (
         <div id='main_checkout_div'>
@@ -137,18 +146,18 @@ export const Checkout = () => {
                 <div className='checkout_productdetails'>
                     <h5>SHOPPING BAG</h5>
                     <hr />
-                    <p>{cartData.length+" Items"}</p>
-                    <hr/>
+                    <p>{cartData.length + " Items"}</p>
+                    <hr />
                     {cartData.map((e, i) => {
                         // let sum=0;
                         return (
-                            <ChekoutProducts data={e} i={i}></ChekoutProducts>
+                            <ChekoutProducts data={e.productId} i={i}></ChekoutProducts>
                         )
                     })}
                     <hr></hr>
                     <Subtotal></Subtotal>
                     <hr></hr>
-                    <p style={{width:'70%'}}>Afterpay cannot be used to purchase backordered, pre-ordered or auto-replenishment products, donations or gift cards </p>
+                    <p style={{ width: '70%' }}>Afterpay cannot be used to purchase backordered, pre-ordered or auto-replenishment products, donations or gift cards </p>
                     <h5>OFFER CODE</h5>
                     <hr></hr>
                     <input placeholder="Offer Code" style={{ width: '95%', padding: '2.5%' }}></input>
