@@ -83,13 +83,15 @@ export const CartData = (data, quantityy, key) => {
               style={{
                 fontSize: "12.5px",
                 color: "grey",
+                fontWeight: "500",
+                cursor: "pointer",
                 textDecoration: "underline",
               }}
               onClick={() => {
                 deleteFunction(data.data._id);
               }}
             >
-              R E M O V E
+              REMOVE
             </p>
           </div>
         </div>
