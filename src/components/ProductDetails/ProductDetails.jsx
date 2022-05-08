@@ -205,6 +205,7 @@ export const ProductDetails = () => {
             <BButton
               onClick={() => {
                 addtocart(proData._id);
+                alert(`${proData.name} is added to the cart`);
               }}
             >
               ADD TO BAG

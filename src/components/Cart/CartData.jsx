@@ -9,28 +9,29 @@ export const CartData = (data, quantityy, i) => {
   //   setQty(e.target.value);
   // };
   //productId:data, qty
-  const getCartElement = async()=>{
-    let res= await fetch(`https://bobbi-brown-api.herokuapp.com/product/product/${data.data}`);
-    let element_data= await res.json();
-    setCartElement(element_data)
-  }
+  const getCartElement = async () => {
+    let res = await fetch(
+      `https://bobbi-brown-api.herokuapp.com/product/product/${data.data}`
+    );
+    let element_data = await res.json();
+    setCartElement(element_data);
+  };
   // {"Product":{"_id":"6270c0fc5bb7242fde5f993f","Image":"https://www.bobbibrowncosmetics.com/media/export/cms/products/600x600/bb_sku_EGXR04_600x600_0.jpg","name":"SKIN LONG-WEAR WEIGHTLESS FOUNDATION","tag":"16-hour, breathable, natural matte coverage","price":44,"page":"face"}}
-  console.log("productId",data.quantityy)
-  const [cartElement, setCartElement]=useState({
-    Product:{
-      Image:"",
-      name:"",
-      tag:"",
-      price:"",
-      page:""
-    }
-   
+  console.log("productId", data.quantityy);
+  const [cartElement, setCartElement] = useState({
+    Product: {
+      Image: "",
+      name: "",
+      tag: "",
+      price: "",
+      page: "",
+    },
   });
 
-  useEffect(()=>{
-    getCartElement()
-  }, [])
-  console.log('cartElement',cartElement)
+  useEffect(() => {
+    getCartElement();
+  }, []);
+  console.log("cartElement", cartElement);
 
   const [form_subscription, setSubscription] = useState({
     subscription: false,
@@ -44,7 +45,7 @@ export const CartData = (data, quantityy, i) => {
     }
   };
 
-  // REMOVE FUNCTION 
+  // REMOVE FUNCTION
   // const removeFunction=(data)=>{
   //   let token = JSON.parse(localStorage.getItem("UserToken"));
   //   // console.log(product_id);
@@ -84,12 +85,52 @@ export const CartData = (data, quantityy, i) => {
             </p>
           </div>
         </div>
-        <div style={{display:'flex',justifyContent:'center', gap:'15px'}}>
-          <button style={{border:'none', fontWeight:'bold', fontSize:'15px'}}> + </button><p style={{paddingTop:'10px'}} >{data.quantityy}</p><button style={{border:'none', fontWeight:'bold', fontSize:'15px'}}> - </button>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "15px",
+            alignItems: "center",
+          }}
+        >
+          <button
+            style={{ border: "none", fontWeight: "bold", fontSize: "15px" }}
+          >
+            {" "}
+            +{" "}
+          </button>
+          <p style={{ paddingTop: "10px" }}>{data.quantityy}</p>
+          <button
+            style={{ border: "none", fontWeight: "bold", fontSize: "15px" }}
+          >
+            {" "}
+            -{" "}
+          </button>
         </div>
-        <div><p>${cartElement.Product.price}</p></div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            paddingTop: "2em",
+          }}
+        >
+          <p>${cartElement.Product.price}</p>
+        </div>
         {/* price */}
-        <div><p>${cartElement.Product.price * data.quantityy}</p></div> {/* price * qty */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            paddingTop: "2em",
+          }}
+        >
+          <p>${cartElement.Product.price * data.quantityy}</p>
+        </div>{" "}
+        {/* price * qty */}
       </div>
       <form>
         <div style={{ display: "flex", flexDirection: "column" }}>

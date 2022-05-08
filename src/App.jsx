@@ -30,7 +30,9 @@ function App() {
 
   const userData = () => {
     const userInfo = JSON.parse(localStorage.getItem("Userdata"));
-    if (userInfo !== null) {
+    if (userInfo == null) {
+      dispatch(userLogin(false));
+    } else {
       dispatch(userLogin(userInfo));
     }
   };
