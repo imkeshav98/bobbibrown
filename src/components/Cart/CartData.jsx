@@ -1,13 +1,12 @@
 import { useState } from "react";
+
 import "./cart.css";
 
 export const CartData = (data, i) => {
-  // console.log(data);
-  const [qty, setQty] = useState(1);
-  const handleQty = (e) => {
-    setQty(e.target.value);
-  };
-
+  // const [qty, setQty] = useState(1);
+  // const handleQty = (e) => {
+  //   setQty(e.target.value);
+  // };
   const [form_subscription, setSubscription] = useState({
     subscription: false,
     value: "",
@@ -19,14 +18,16 @@ export const CartData = (data, i) => {
       setSubscription(true);
     }
   };
+
   return (
     <div>
       <div key={i} className="flex_table">
         <div className="image_name">
-          <img src={data.data.url} alt=""></img>
+          <img src={Image} alt=""></img>
           <div>
             <p>
-              <b>{data.data.name}</b>
+              <b>{}</b>
+              {/* name */}
             </p>
             <p
               style={{
@@ -40,14 +41,16 @@ export const CartData = (data, i) => {
           </div>
         </div>
         <div>
-          <select onChange={handleQty}>
+          <select>
+            {/* Onchange = {handle quantity}*/}
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
           </select>
         </div>
-        <div>{data.data.price}</div>
-        <div>{data.data.price * qty}</div>
+        <div>{}</div>
+        {/* price */}
+        <div>{}</div> {/* price * qty */}
       </div>
       <form>
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -90,23 +93,21 @@ export const CartData = (data, i) => {
   );
 };
 
-export const Subtotal = () => {
+export const Subtotal = ({ data }) => {
   return (
     <div id="subtotal">
       <div>
-        <p>Subotal</p>
+        <p>Subtotal</p>
         <p>Shipping</p>
-        <p>Discount</p>
         <p>
           <b>SUBTOTAL</b>
         </p>
       </div>
       <div>
-        <p>Rs</p>
+        <p>$ {data}</p>
         <p>FREE</p>
-        <p>15%</p>
         <p>
-          <b>Rs</b>
+          <b>$ {data}</b>
         </p>
       </div>
     </div>

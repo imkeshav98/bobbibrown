@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";

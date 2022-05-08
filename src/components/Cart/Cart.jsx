@@ -2,18 +2,25 @@ import { useEffect, useState } from "react";
 import { BButton } from "../ProductDetails/styled-components";
 import "./cart.css";
 import { CartData, Subtotal } from "./CartData";
+import { useSelector } from "react-redux";
 export const Cart = () => {
+  let cartItems = useSelector((store) => store.loginData.payload);
   const [cartData, setCartData] = useState([]);
-  useEffect(() => {
-    getCartData();
-  }, []);
+  const [totalPrice, setTotalPrice] = useState(0);
 
-  const getCartData = async () => {
-    let res = await fetch("http://localhost:8080/product");
-    let data = await res.json();
-    setCartData(data);
-  };
-  // console.log(cartData)
+  useEffect(() => {
+    if (cartItems !== undefined) {
+      setCartData(cartItems.cart.items);
+    }
+  }, [cartItems]);
+
+  useEffect(() => {
+    if (cartItems !== undefined) {
+      setTotalPrice(cartItems.cart.totalPrice);
+    }
+  }, [cartItems]);
+
+  console.log("Check This Out", cartData);
 
   return (
     <div style={{ padding: "2.5%" }}>
@@ -46,7 +53,7 @@ export const Cart = () => {
             return <CartData data={e} i={i}></CartData>;
           })}
           <div>
-            <Subtotal></Subtotal>
+            <Subtotal data={totalPrice}></Subtotal>
             <hr></hr>
             <p>
               Afterpay cannot be used to purchase backordered, pre-ordered or
@@ -107,7 +114,7 @@ export const Cart = () => {
             Join BB Access and earn 144 points with your purchase today.
           </p>
           <hr></hr>
-          <Subtotal></Subtotal>
+          <Subtotal data={totalPrice}></Subtotal>
           <p style={{ fontSize: "15px" }}>
             Afterpay cannot be used to purchase backordered, pre-ordered or
             auto-replenishment products, donations or gift cards{" "}

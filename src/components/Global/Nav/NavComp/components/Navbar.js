@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import { IconContext } from "react-icons";
 import { MdOutlineLocationOn } from "react-icons/md";
@@ -20,7 +20,6 @@ import VirtualServicesNavbar from "./VirtualServicesNavbar";
 import DiscoverNavbar from "./DiscoverNavbar";
 import { Logout } from "./Logout";
 import { useSelector } from "react-redux";
-import { compose } from "redux";
 
 var originalArr = [];
 export function Navbar() {
@@ -50,9 +49,13 @@ export function Navbar() {
     getData();
   }, []);
 
-  // useEffect(() => {
-  //   setCartCount(isUserLoggedIn.cart.items.length);
-  // }, [isUserLoggedIn, cartCount]);
+  useEffect(() => {
+    if (isUserLoggedIn) {
+      setCartCount(isUserLoggedIn.cart.items.length);
+    } else {
+      setCartCount(0);
+    }
+  }, [isUserLoggedIn, cartCount]);
 
   //getting the input value
   const gettingSelectedItem = (selectedItem) => {
