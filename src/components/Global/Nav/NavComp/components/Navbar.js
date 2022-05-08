@@ -18,6 +18,7 @@ import Makeup from "./Makeup";
 import SkincareNavbar from "./SkincareNavbar";
 import VirtualServicesNavbar from "./VirtualServicesNavbar";
 import DiscoverNavbar from "./DiscoverNavbar";
+import { Logout } from "./Logout";
 
 var originalArr = [];
 export function Navbar() {
@@ -28,6 +29,8 @@ export function Navbar() {
   if (!originalArr.length) {
     originalArr = [...product];
   }
+  const isUserLoggedIn = JSON.parse(localStorage.getItem("Userdata"));
+  console.log("isuserLoffedIn : ", isUserLoggedIn);
 
   useEffect(() => {
     async function getData() {
@@ -38,7 +41,7 @@ export function Navbar() {
     }
     getData();
   }, []);
-  console.log(product);
+  console.log("check karo check", product);
 
   //getting the input value
   const gettingSelectedItem = (selectedItem) => {
@@ -249,46 +252,57 @@ export function Navbar() {
           {/* ========================================================== */}
 
           {/* ============================================================= */}
-          <div
-            className="NavbarChoiceElement"
-            id="New"
-            onMouseOver={unHideNewNavBarBox}
-            onMouseLeave={hideNewNavbarBoxBox}
-          >
-            NEW
-          </div>
-          <div
-            className="NavbarChoiceElement"
-            id="BestSeller"
-            onMouseOver={unHideBestSellerBarBox}
-            onMouseLeave={hideNewBestSellerBoxBox}
-          >
-            BESTSELLER
-          </div>
-          <div
-            className="NavbarChoiceElement"
-            id="Face"
-            onMouseOver={unHideFaceBarBox}
-            onMouseLeave={hideNewFaceBoxBox}
-          >
-            FACE
-          </div>
-          <div
-            className="NavbarChoiceElement"
-            id="Makeup"
-            onMouseOver={unHideMakeupBarBox}
-            onMouseLeave={hideNewMakeupBoxBox}
-          >
-            MAKEUP
-          </div>
-          <div
-            className="NavbarChoiceElement"
-            id="Skincare"
-            onMouseOver={unHideSkincareBarBox}
-            onMouseLeave={hideNewSkincareBoxBox}
-          >
-            SKINCARE
-          </div>
+          <Link to="/products/new">
+            <div
+              className="NavbarChoiceElement"
+              id="New"
+              onMouseOver={unHideNewNavBarBox}
+              onMouseLeave={hideNewNavbarBoxBox}
+            >
+              NEW
+            </div>
+          </Link>
+          <Link to="/products/bestseller">
+            <div
+              className="NavbarChoiceElement"
+              id="BestSeller"
+              onMouseOver={unHideBestSellerBarBox}
+              onMouseLeave={hideNewBestSellerBoxBox}
+            >
+              BESTSELLER
+            </div>
+          </Link>
+          <Link to="/products/face">
+            <div
+              className="NavbarChoiceElement"
+              id="Face"
+              onMouseOver={unHideFaceBarBox}
+              onMouseLeave={hideNewFaceBoxBox}
+            >
+              FACE
+            </div>
+          </Link>
+          <Link to="/products/makeup">
+            <div
+              className="NavbarChoiceElement"
+              id="Makeup"
+              onMouseOver={unHideMakeupBarBox}
+              onMouseLeave={hideNewMakeupBoxBox}
+            >
+              MAKEUP
+            </div>
+          </Link>
+          <Link to="/products/skincare">
+            <div
+              className="NavbarChoiceElement"
+              id="Skincare"
+              onMouseOver={unHideSkincareBarBox}
+              onMouseLeave={hideNewSkincareBoxBox}
+            >
+              SKINCARE
+            </div>
+          </Link>
+
           <div
             className="NavbarChoiceElement"
             id="Virtual"
@@ -327,7 +341,7 @@ export function Navbar() {
         onMouseLeave={hideUserBox}
         onMouseOver={unHideUserBox}
       >
-        <User />
+        {isUserLoggedIn === null ? <User /> : <Logout />}
       </div>
       <div
         className="hiddenBoxofNewOfNavbar hidden underline"
@@ -384,22 +398,24 @@ export function Navbar() {
                      */}
       <div className="searchDebouncing hidden">
         {product.map((e) => (
-          <div className="debouncingDiv py-3">
-            {/* //for appending img */}
-            <div>
-              <img className="debouncingimg" src={e.Image} alt="" />
+          <Link to={`/products/${e.page}/${e._id}`}>
+            <div className="debouncingDiv py-3">
+              {/* //for appending img */}
+              <div>
+                <img className="debouncingimg" src={e.Image} alt="" />
+              </div>
+              {/* for apprnding text */}
+              <div>
+                <h5>{e.name}</h5>
+                <br />
+                <p className="debouncingPTag">{e.tag}</p>
+                <br />
+                <p className="debouncingPTag">{`${e.price} $`}</p>
+                <p className="debouncingPTagpage">{e.page}</p>
+              </div>
+              <hr />
             </div>
-            {/* for apprnding text */}
-            <div>
-              <h5>{e.name}</h5>
-              <br />
-              <p className="debouncingPTag">{e.tag}</p>
-              <br />
-              <p className="debouncingPTag">{`${e.price} $`}</p>
-              <p className="debouncingPTagpage">{e.page}</p>
-            </div>
-            <hr />
-          </div>
+          </Link>
         ))}
       </div>
     </div>

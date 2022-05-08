@@ -12,7 +12,7 @@ export const Products = () => {
 
   useEffect(() => {
     filterProduct();
-  }, [allProducts]);
+  }, [allProducts, page]);
 
   const filterProduct = () => {
     filteredProduct = allProducts.filter((e) => e.page === page);
