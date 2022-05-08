@@ -30,7 +30,6 @@ export function Navbar() {
   const [cartCount, setCartCount] = useState(0);
   const [logCheck, setLogCheck] = useState([]);
   let isUserLoggedIn = useSelector((store) => store.loginData.payload);
-  console.log(isUserLoggedIn);
 
   if (!originalArr.length) {
     originalArr = [...product];
@@ -67,28 +66,24 @@ export function Navbar() {
   };
 
   const unHideSignUpBox = () => {
-    console.log("hover");
     document.querySelector(".hiddenBoxofSignUp").classList.remove("hidden");
   };
   const hideSignUpBox = () => {
     document.querySelector(".hiddenBoxofSignUp").classList.add("hidden");
   };
   const hideBbaccessBox = () => {
-    console.log("hover");
     document.querySelector(".hiddenBoxofBbaccess").classList.add("hidden");
   };
   const unHideBbaccessBox = () => {
     document.querySelector(".hiddenBoxofBbaccess").classList.remove("hidden");
   };
   const hideUserBox = () => {
-    console.log("hover");
     document.querySelector(".hiddenBoxofLogin").classList.add("hidden");
   };
   const unHideUserBox = () => {
     document.querySelector(".hiddenBoxofLogin").classList.remove("hidden");
   };
   const hideNewNavbarBoxBox = () => {
-    console.log("hover");
     document.querySelector("#New").classList.remove("underLine");
     document.querySelector(".hiddenBoxofNewOfNavbar").classList.add("hidden");
   };
@@ -100,7 +95,6 @@ export function Navbar() {
       .classList.remove("hidden");
   };
   const hideNewBestSellerBoxBox = () => {
-    console.log("hover");
     document.querySelector("#BestSeller").classList.remove("underLine");
     document
       .querySelector(".hiddenBoxofBestsellerOfNavbar")
@@ -113,7 +107,6 @@ export function Navbar() {
     document.querySelector("#BestSeller").classList.add("underLine");
   };
   const hideNewFaceBoxBox = () => {
-    console.log("hover");
     document.querySelector("#Face").classList.remove("underLine");
     document.querySelector(".hiddenBoxofFaceOfNavbar").classList.add("hidden");
   };
@@ -124,7 +117,6 @@ export function Navbar() {
     document.querySelector("#Face").classList.add("underLine");
   };
   const hideNewMakeupBoxBox = () => {
-    console.log("hover");
     document.querySelector("#Makeup").classList.remove("underLine");
     document
       .querySelector(".hiddenBoxofMakeupOfNavbar")
@@ -137,7 +129,6 @@ export function Navbar() {
     document.querySelector("#Makeup").classList.add("underLine");
   };
   const hideNewSkincareBoxBox = () => {
-    console.log("hover");
     document.querySelector("#Skincare").classList.remove("underLine");
     document
       .querySelector(".hiddenBoxofSkincareOfNavbar")
@@ -150,7 +141,6 @@ export function Navbar() {
     document.querySelector("#Skincare").classList.add("underLine");
   };
   const hideNewVirtualBoxBox = () => {
-    console.log("hover");
     document.querySelector("#Virtual").classList.remove("underLine");
     document
       .querySelector(".hiddenBoxofVirtualOfNavbar")
@@ -163,7 +153,6 @@ export function Navbar() {
     document.querySelector("#Virtual").classList.add("underLine");
   };
   const hideNewDiscoverBoxBox = () => {
-    console.log("hover");
     document.querySelector("#Discover").classList.remove("underLine");
     document
       .querySelector(".hiddenBoxofDiscoverOfNavbar")
