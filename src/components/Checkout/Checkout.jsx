@@ -6,6 +6,9 @@ import { ChekoutProducts, Subtotal } from './CheckoutProducts'
 export const Checkout = () => {
     const navigate = useNavigate();
     let cartItems = useSelector((store) => store.loginData.payload);
+    let userdata= JSON.parse(localStorage.getItem("Userdata"));
+    const email_of_user= userdata.email
+    // console.log('email',email_of_user)
 
     const [checkout_form, setCheckoutForm] = useState({
         first_name: "",
@@ -58,7 +61,7 @@ export const Checkout = () => {
                     <hr></hr>
                     <h5>EMAIL</h5>
                     <hr />
-                    <p>banegarhuzzi1010@gmail.com</p> {/* USER EMAIL HERE */}
+                    <p>{email_of_user}</p> {/* USER EMAIL HERE */}
                     <hr />
 
                     {submitted === false ?
@@ -70,8 +73,8 @@ export const Checkout = () => {
                                 <section className='check_username'>
                                     <input onChange={handleChange} name='first_name' type="text" placeholder='* First Name' /><input onChange={handleChange} name='last_name' type="text" placeholder='* Last Name' />
                                 </section>
-                                <input onChange={handleChange} name='street' type="text" placeholder="* Street Address" style={{ width: '97%' }}></input>
-                                <input onChange={handleChange} name='apt' type="text" placeholder="Apt, Suite, unit, floor etc (optional)" style={{ width: '97%' }}></input>
+                                <input onChange={handleChange} name='street' type="text" placeholder="* Street Address" style={{ width: '100%' }}></input>
+                                <input onChange={handleChange} name='apt' type="text" placeholder="Apt, Suite, unit, floor etc (optional)" style={{ width: '100%' }}></input>
                                 <section className='zip_city_state'>
                                     <input onChange={handleChange} name='zip' type="text" placeholder='Zip' /><input onChange={handleChange} name='city' type="text" placeholder='City' /><input onChange={handleChange} name='state' type="text" placeholder='State' />
                                 </section>

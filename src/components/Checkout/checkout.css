@@ -17,7 +17,7 @@
 }
 .checkout_productdetails{
     width: 35%;
-    padding: 2.5%;
+    padding: 10px;
     /* border: 1px solid green; */
     text-align: left;
 }
@@ -27,22 +27,24 @@
 .check_username{
     display: flex;
     justify-content: space-between;
+    margin: auto;
 }
 .checkout_userdetails form input{
-    padding: 12px 10px;
+    padding: 12px ;
     border: 1.5px solid black;
     margin:1% 0px;
 }
 
 .check_username>input{
-    width: 45%;
+    width: 48%;
 }
 .zip_city_state{
     display: flex;
+    margin: auto;
     justify-content: space-between;
 }
 .zip_city_state>input{
-    width: 25%;
+    width: 30%;
 }
 .apply_btn{
     background-color: black;
