@@ -1,11 +1,15 @@
 import "./productdetails.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BButton } from "./styled-components";
 import { Menu, Dropdown, Space } from "antd";
 import { DownOutlined, StarFilled, InstagramFilled } from "@ant-design/icons";
 import { createFromIconfontCN } from "@ant-design/icons";
 import { Review } from "./review";
 import "antd/dist/antd.css";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../../Redux/Login/action";
 
 const menu1 = (
   <Menu
@@ -110,9 +114,24 @@ const IconFont = createFromIconfontCN({
 });
 
 export const ProductDetails = () => {
+  const { _id } = useParams();
+  const [proData, setProData] = useState({});
+  useEffect(() => {
+    getProduct();
+    return () => {};
+  }, [_id]);
+  const getProduct = () => {
+    axios
+      .get(`https://bobbi-brown-api.herokuapp.com/product/product/${_id}`)
+      .then((res) => {
+        setProData(res.data.Product);
+        setImgsrc(res.data.Product.Image);
+      });
+  };
+
   // console.log(Review);
   const [imgsrc, setImgsrc] = useState(
-    "https://www.bobbibrown.in/media/export/cms/products/v2_1080x1080/bb_sku_E1LM01_1080x1080_0.jpg" //USE PRODUCTS IMAGE HERE
+    "" //USE PRODUCTS IMAGE HERE
   );
 
   const handleImg = (e) => {
@@ -131,6 +150,24 @@ export const ProductDetails = () => {
       document.querySelector("#left_btn").style.border = "none";
       setEyeFace("left");
     }
+  };
+
+  const dispatch = useDispatch();
+  const addtocart = async (product_id) => {
+    let token = JSON.parse(localStorage.getItem("UserToken"));
+    console.log(product_id);
+    fetch(`https://bobbi-brown-api.herokuapp.com/cart/add/${product_id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+    })
+      .then((res) => res.json())
+      .then((cart) => {
+        dispatch(userLogin(cart.user));
+        localStorage.setItem("Userdata", JSON.stringify(cart.user));
+      });
   };
 
   return (
@@ -159,13 +196,19 @@ export const ProductDetails = () => {
         <div className="details_section">
           <div className="left_details1">
             <p style={{ color: "red" }}>Our #1 Moisturizer</p>
-            <h4>VITAMIN ENRICHED FACE BASE</h4> {/*PRODUCT TITLE HERE*/}
-            <p>Moisturizer and primer in one</p>
-            <p>Category</p>
+            <h4>{proData.name}</h4> {/*PRODUCT TITLE HERE*/}
+            <p>{proData.tag}</p>
+            <p>{proData.page}</p>
             <p>
               Mfg Date (Use Before 36 months from manufacturing date) 02/2021
             </p>
-            <BButton>ADD TO BAG</BButton>
+            <BButton
+              onClick={() => {
+                addtocart(proData._id);
+              }}
+            >
+              ADD TO BAG
+            </BButton>
             <br></br>
             <b>MINI BEAUTY. MORE LOVE.</b>
             <br></br>
@@ -248,7 +291,7 @@ export const ProductDetails = () => {
             </div>
           </div>
           <div className="right_details1">
-            <h4>Rs 5800</h4>
+            <h4>${proData.price}</h4>
             {/* PRODUCT PROCE HERE*/}
             <p>MRP inclusive of ll taxes |</p>
             <p>50 ml</p>

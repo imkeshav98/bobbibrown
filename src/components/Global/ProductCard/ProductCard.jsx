@@ -2,8 +2,11 @@
 import { Link } from "react-router-dom";
 import { ButtonStyled } from "../../../Styled/Button";
 import "./productcard.css";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../../../Redux/Login/action";
 
 export const ProductCard = ({ info }) => {
+  const dispatch = useDispatch();
   const addtocart = async (product_id) => {
     let token = JSON.parse(localStorage.getItem("UserToken"));
     console.log(product_id);
@@ -15,9 +18,10 @@ export const ProductCard = ({ info }) => {
       },
     })
       .then((res) => res.json())
-      .then((cart) =>
-        localStorage.setItem("Userdata", JSON.stringify(cart.user))
-      );
+      .then((cart) => {
+        dispatch(userLogin(cart.user));
+        localStorage.setItem("Userdata", JSON.stringify(cart.user));
+      });
   };
 
   return (
