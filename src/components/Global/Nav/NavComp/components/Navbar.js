@@ -237,12 +237,12 @@ export function Navbar() {
                 <AiOutlineUser />
               </Link>
             </div>
-            <div className="LocationIcon">
-              <Link to="/cart">
-              <BsBag />
-              <div className="NavBarCartCount">{cartCount}</div>
-              </Link>
-            </div>
+            <Link to="/cart">
+              <div className="LocationIcon">
+                <BsBag />
+                <div className="NavBarCartCount">{cartCount}</div>
+              </div>
+            </Link>
           </IconContext.Provider>
         </div>
       </div>
