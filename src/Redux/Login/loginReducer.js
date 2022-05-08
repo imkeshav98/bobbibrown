@@ -3,12 +3,11 @@ import { LOGIN } from "./action";
 const initialState = false;
 
 export const loginReducer = (store = initialState, { type, payload }) => {
-  console.log(payload);
   switch (type) {
     // add your login reducer functionalities here
     case LOGIN:
       localStorage.setItem("userLoginDetails", payload);
-      return { ...store, user: payload };
+      return { ...store, payload };
     default:
       return store;
   }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import "./Navbar.css";
 import { IconContext } from "react-icons";
 import { MdOutlineLocationOn } from "react-icons/md";
@@ -19,18 +19,26 @@ import SkincareNavbar from "./SkincareNavbar";
 import VirtualServicesNavbar from "./VirtualServicesNavbar";
 import DiscoverNavbar from "./DiscoverNavbar";
 import { Logout } from "./Logout";
+import { useSelector } from "react-redux";
+import { compose } from "redux";
 
 var originalArr = [];
 export function Navbar() {
   // /for debouncing
 
   const [product, setProduct] = useState([]);
-  const [inputValue, setInputValue] = useState("");
+  const [cartCount, setCartCount] = useState(0);
+  const [logCheck, setLogCheck] = useState([]);
+  let isUserLoggedIn = useSelector((store) => store.loginData.payload);
+  console.log(isUserLoggedIn);
+
   if (!originalArr.length) {
     originalArr = [...product];
   }
-  const isUserLoggedIn = JSON.parse(localStorage.getItem("Userdata"));
-  console.log("isuserLoffedIn : ", isUserLoggedIn);
+
+  useEffect(() => {
+    setLogCheck(isUserLoggedIn);
+  }, [isUserLoggedIn, logCheck]);
 
   useEffect(() => {
     async function getData() {
@@ -41,7 +49,10 @@ export function Navbar() {
     }
     getData();
   }, []);
-  console.log("check karo check", product);
+
+  // useEffect(() => {
+  //   setCartCount(isUserLoggedIn.cart.items.length);
+  // }, [isUserLoggedIn, cartCount]);
 
   //getting the input value
   const gettingSelectedItem = (selectedItem) => {
@@ -190,12 +201,15 @@ export function Navbar() {
         </div>
 
         {/* 2----> BIBO BROWN LOGO */}
+
         <div className="BobiBrownNavbar_BobiBrownLogo">
-          <img
-            className="BobiBrownNavbar_BobiBrownLogo_Img"
-            src="https://www.bobbibrowncosmetics.com/media/export/cms/logo.png"
-            alt="Bobi Brown"
-          />
+          <Link to="/">
+            <img
+              className="BobiBrownNavbar_BobiBrownLogo_Img"
+              src="https://www.bobbibrowncosmetics.com/media/export/cms/logo.png"
+              alt="Bobi Brown"
+            />
+          </Link>
         </div>
 
         {/* 3-----> location, cart, login user */}
@@ -222,6 +236,7 @@ export function Navbar() {
             </div>
             <div className="LocationIcon">
               <BsBag />
+              <div className="NavBarCartCount">{cartCount}</div>
             </div>
           </IconContext.Provider>
         </div>
@@ -341,7 +356,7 @@ export function Navbar() {
         onMouseLeave={hideUserBox}
         onMouseOver={unHideUserBox}
       >
-        {isUserLoggedIn === null ? <User /> : <Logout />}
+        {logCheck !== false ? <Logout /> : <User />}
       </div>
       <div
         className="hiddenBoxofNewOfNavbar hidden underline"

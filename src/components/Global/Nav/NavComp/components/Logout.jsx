@@ -1,11 +1,13 @@
 import React from "react";
 import { ButtonStyled } from "../../../../../Styled/Button";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../../../../../Redux/Login/action";
 
 export const Logout = () => {
   const userData = JSON.parse(localStorage.getItem("Userdata")) || [];
   const navigate = useNavigate();
-  console.log(userData);
+  const dispatch = useDispatch();
 
   return (
     <div
@@ -24,6 +26,8 @@ export const Logout = () => {
         gap: "2em",
         right: "2rem",
         border: "1px solid black",
+        boxShadow:
+          "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
       }}
     >
       <div
@@ -49,7 +53,8 @@ export const Logout = () => {
         onClick={() => {
           localStorage.removeItem("Userdata");
           localStorage.removeItem("UserToken");
-          window.location.reload();
+          dispatch(userLogin(false));
+          // window.location.reload();
         }}
       >
         Logout

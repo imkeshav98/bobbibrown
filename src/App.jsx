@@ -7,14 +7,15 @@ import { handleData } from "./Redux/ProductData/actions";
 import axios from "axios";
 import { useEffect } from "react";
 import { Navbar } from "./components/Global/Nav/NavComp/components/Navbar";
-import { Auth } from "./components/Auth/Auth";
-import { Logout } from "./components/Global/Nav/NavComp/components/Logout";
+import { userLogin } from "./Redux/Login/action";
+
 // import {Navbar} from "./components/Global/Nav/NavComp/Navbar";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    userData();
     getData();
     return () => {};
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -25,6 +26,13 @@ function App() {
       const data = res.data;
       dispatch(handleData(data));
     });
+  };
+
+  const userData = () => {
+    const userInfo = JSON.parse(localStorage.getItem("Userdata"));
+    if (userInfo !== null) {
+      dispatch(userLogin(userInfo));
+    }
   };
 
   return (
