@@ -15,7 +15,7 @@ export const CartData = (data, quantityy, i) => {
     setCartElement(element_data)
   }
   // {"Product":{"_id":"6270c0fc5bb7242fde5f993f","Image":"https://www.bobbibrowncosmetics.com/media/export/cms/products/600x600/bb_sku_EGXR04_600x600_0.jpg","name":"SKIN LONG-WEAR WEIGHTLESS FOUNDATION","tag":"16-hour, breathable, natural matte coverage","price":44,"page":"face"}}
-  console.log("productId", quantityy)
+  console.log("productId",data.quantityy)
   const [cartElement, setCartElement]=useState({
     Product:{
       Image:"",
@@ -44,6 +44,24 @@ export const CartData = (data, quantityy, i) => {
     }
   };
 
+  // REMOVE FUNCTION 
+  // const removeFunction=(data)=>{
+  //   let token = JSON.parse(localStorage.getItem("UserToken"));
+  //   // console.log(product_id);
+  //   fetch(`https://bobbi-brown-api.herokuapp.com/cart/remove/${data}`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: "Bearer " + token,
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((cart) => {
+  //       // dispatch(userLogin(cart.user));
+  //       localStorage.setItem("Userdata", JSON.stringify(cart.user));
+  //     });
+  // }
+
   return (
     <div>
       <div key={i} className="flex_table">
@@ -60,22 +78,18 @@ export const CartData = (data, quantityy, i) => {
                 color: "grey",
                 textDecoration: "underline",
               }}
+              // onClick={removeFunction}
             >
               R E M O V E
             </p>
           </div>
         </div>
-        <div>
-          <select>
-            {/* Onchange = {handle quantity}*/}
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
+        <div style={{display:'flex',justifyContent:'center', gap:'15px'}}>
+          <button style={{border:'none', fontWeight:'bold', fontSize:'15px'}}> + </button><p style={{paddingTop:'10px'}} >{data.quantityy}</p><button style={{border:'none', fontWeight:'bold', fontSize:'15px'}}> - </button>
         </div>
-        <div>${cartElement.Product.price}</div>
+        <div><p>${cartElement.Product.price}</p></div>
         {/* price */}
-        <div>${cartElement.Product.price}</div> {/* price * qty */}
+        <div><p>${cartElement.Product.price * data.quantityy}</p></div> {/* price * qty */}
       </div>
       <form>
         <div style={{ display: "flex", flexDirection: "column" }}>

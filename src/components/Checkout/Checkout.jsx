@@ -154,7 +154,7 @@ export const Checkout = () => {
                     {cartData.map((e, i) => {
                         // let sum=0;
                         return (
-                            <ChekoutProducts data={e.productId} i={i}></ChekoutProducts>
+                            <ChekoutProducts data={e.productId} qty={e.qty} i={i}></ChekoutProducts>
                         )
                     })}
                     <hr></hr>

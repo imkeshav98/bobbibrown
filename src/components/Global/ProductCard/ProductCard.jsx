@@ -21,6 +21,7 @@ export const ProductCard = ({ info }) => {
       .then((cart) => {
         dispatch(userLogin(cart.user));
         localStorage.setItem("Userdata", JSON.stringify(cart.user));
+        alert(`Added ${info.name} to cart`)
       });
   };
 
