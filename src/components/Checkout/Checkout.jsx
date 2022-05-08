@@ -129,9 +129,9 @@ export const Checkout = () => {
                                 </p>
                                 <input type="number" placeholder="Credit Card Number"></input>
                                 <div className='zip_city_state' >
-                                    <input type="number" placeholder="Month"></input>
-                                    <input type="number" placeholder="Year"></input>
-                                    <input type="number" placeholder="Cvv"></input>
+                                    <input id='month_oncard' type="number" placeholder="Month"></input>
+                                    <input id='year_oncard' type="number" placeholder="Year"></input>
+                                    <input id='cvv_oncard' type="number" placeholder="Cvv"></input>
                                 </div>
                             </form>
                             <hr></hr>
