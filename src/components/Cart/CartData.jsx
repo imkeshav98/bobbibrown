@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { userLogin } from "../../Redux/Login/action";
 import "./cart.css";
-
 export const CartData = (data, quantityy, key) => {
   const dispatch = useDispatch();
 
@@ -73,7 +73,12 @@ export const CartData = (data, quantityy, key) => {
     <div key={key}>
       <div className="flex_table">
         <div className="image_name">
-          <img src={data.data.Image} alt=""></img>
+          <Link
+            to={`/products/${data.data.page}/${data.data._id}`}
+            className="image_name"
+          >
+            <img src={data.data.Image} alt=""></img>
+          </Link>
           <div>
             <p>
               <b>{data.data.name}</b>
@@ -148,6 +153,7 @@ export const CartData = (data, quantityy, key) => {
         </div>{" "}
         {/* price * qty */}
       </div>
+
       <form>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <section>
