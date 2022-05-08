@@ -6,9 +6,12 @@ import { BsFacebook } from "react-icons/bs";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../../../../../Redux/Login/action";
 
 export default function User() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const crossIcon = () => {
     document.querySelector(".hiddenBoxofLogin").classList.add("hidden");
     console.log("cross is clicked");
@@ -34,8 +37,8 @@ export default function User() {
       .then((res) => {
         localStorage.setItem("Userdata", JSON.stringify(res.data.user));
         localStorage.setItem("UserToken", JSON.stringify(res.data.token));
+        dispatch(userLogin(res.data.user));
         navigate("/");
-        window.location.reload();
       });
   };
 
@@ -74,50 +77,6 @@ export default function User() {
           </button>
 
           <hr className="horizontalLine" />
-          <p>
-            By clicking "CONTINUE WITH FACEBOOK", I agree <br></br>
-            to the Bobbi Brown{" "}
-            <a href="" className="allHyperLinks">
-              Terms and Conditions{" "}
-            </a>
-            and <br />{" "}
-            <a href="" className="allHyperLinks">
-              Privacy Policy
-            </a>
-            .
-          </p>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckIndeterminate"
-            />
-            <label class="form-check-label" for="flexCheckIndeterminate">
-              Yes, sign me up to hear from Bobbi Brown! To <br /> learn more,
-              view our{" "}
-              <a href="" className="allHyperLinks">
-                Privacy Policy
-              </a>{" "}
-              . If I am a <br /> California resident, I agree to the{" "}
-              <a href="" className="allHyperLinks">
-                {" "}
-                Notice of <br />
-                Financial Incentive
-              </a>
-              .
-            </label>
-          </div>
-          <button className="FacebookButton my-3">
-            <IconContext.Provider
-              value={{ color: "white", size: "1.5rem", mr: "2" }}
-              className="facebookIcon"
-            >
-              <BsFacebook className="facebookIcon" />
-              {/* <bs icon={BsFacebook}  /> */}
-            </IconContext.Provider>
-            Continue with Facebook
-          </button>
         </div>
         <div className="Registerpart">
           <p>Don't have an account?</p>

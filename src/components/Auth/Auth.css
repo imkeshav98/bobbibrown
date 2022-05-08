@@ -3,27 +3,22 @@
 .Auth{
   margin: auto;
   display:flex;
-  padding: 2.5%;
   justify-content:space-between;
-  /* border: 1px solid red; */
-  width:50%;
-  margin-top: 100px;
+  max-width: 900px;
+  margin-top: 2em;
 }
 .formleft{
   width:48%;
 /* border:1px solid rgb(11, 10, 10) */
-border-bottom: 3px solid black;
+border-bottom: 2px solid black;
+padding-bottom: 2em;
 }
 .formright {
     width:48%;
-/* border:1px solid rgb(15, 14, 14); */
-border-bottom: 3px solid black;
+padding-bottom: 2em;
+border-bottom: 2px solid black;
 }
-.vertical_lineAuth{
-background-color:black;
-width: 1%;
-height:95%;
-}
+
 .form{
   width:100%;
   height: 40px;
@@ -34,16 +29,28 @@ height:95%;
 .leftDiv{
   /* border:1px solid blue; */
   width: 90%;
-  padding: 3%;
+  padding: 3% 0%;
   margin: auto;
- 
+}
+
+.leftDiv__heading {
+  display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    margin-bottom: 1.5em;
 }
 .rightDiv {
   /* border: 1px solid blue; */
   width: 90%;
   margin: auto;
-  padding: 3%;
+  padding: 3% 0%;
 
+}
+.rightDiv__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 .Continueleft{
@@ -115,6 +122,11 @@ sans-serif;
 }
 .or{
 display: none;
+}
+
+.Auth input {
+  border: 1px solid black;
+  padding-left: 10px;
 }
 @media only screen and (max-width:900px){
   .Auth{

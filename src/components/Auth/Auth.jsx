@@ -35,10 +35,8 @@ export const Auth = () => {
       .then(function (response) {
         localStorage.setItem("Userdata", JSON.stringify(response.data.user));
         localStorage.setItem("UserToken", JSON.stringify(response.data.token));
-        // console.log(response.data);
-        dispatch(userLogin(true));
+        dispatch(userLogin(response.data.user));
         navigate("/");
-        window.location.reload();
       })
       .catch(function (error) {
         if (error.response.data) {
@@ -64,10 +62,8 @@ export const Auth = () => {
         console.log(res.data.user.email);
         localStorage.setItem("Userdata", JSON.stringify(res.data.user));
         localStorage.setItem("UserToken", JSON.stringify(res.data.token));
-        dispatch(userLogin(res.data.token));
-        dispatch(userLogin(true));
+        dispatch(userLogin(res.data.user));
         navigate("/");
-        window.location.reload();
       });
   };
   return (
@@ -76,11 +72,13 @@ export const Auth = () => {
         <form className="formleft" onSubmit={loginSuccess}>
           <section className="left">
             <div className="leftDiv">
-              <div>
-                <h3 className="Alreadyhaveacc" id="">
+              <div className="leftDiv__heading">
+                <h3 className="Alreadyhaveacc" style={{ fontSize: "1.4em" }}>
                   Already have an account?
                 </h3>
-                <h2 className="section">CONTINUE</h2>
+                <h5 className="section" style={{ fontSize: "1em" }}>
+                  CONTINUE
+                </h5>
               </div>
               <div>
                 <input
@@ -121,13 +119,13 @@ export const Auth = () => {
           <section className="right">
             <div className="rightDiv">
               <div>
-                <div>
-                  <h3 className="Alreadyhaveacc" id=" ">
+                <div className="rightDiv__heading">
+                  <h3 className="Alreadyhaveacc" style={{ fontSize: "1.4em" }}>
                     Don't have an account?
                   </h3>
-                  <h2 className="section">
+                  <h5 className="section" style={{ fontSize: "1em" }}>
                     CREATE & JOIN BB <u>ACCESS</u>
-                  </h2>
+                  </h5>
                 </div>
                 <div>
                   <input
@@ -160,11 +158,22 @@ export const Auth = () => {
                   />
                 </div>
                 <div>
-                  <section className="rightsection">
+                  <section
+                    className="rightsection"
+                    style={{
+                      marginLeft: "0px",
+                      marginBottom: "1em",
+                    }}
+                  >
                     <label className="check">When is your birthday?</label>
 
                     <div className="monnthnday">
-                      <select className="month">
+                      <select
+                        className="month"
+                        style={{
+                          marginLeft: "0px",
+                        }}
+                      >
                         <option value="">Month</option>
                         <option value="1">January</option>
                         <option value="2">February</option>

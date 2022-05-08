@@ -138,9 +138,6 @@ pointer-events: auto;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     width:350px;
     height: 60vh;
-    /* text-align: center; */
-    /* padding-left:40px;
-    padding-top: 30px; */
     color: black;
     background-color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -150,7 +147,8 @@ pointer-events: auto;
     margin-left: 60px;
     padding:10px;
     overflow-y: scroll;
-    
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .debouncingimg{
     width:100px;
@@ -167,6 +165,20 @@ pointer-events: auto;
 }
 .debouncingPTagpage{
     color:rgb(216,71,87)
+}
+
+.NavBarCartCount {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    margin-top: -100%;
+    margin-left: 1.2em;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
 }
 
 

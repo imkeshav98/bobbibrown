@@ -13,7 +13,7 @@ export default function Signup() {
 
   return (
     <div className="Signup_div">
-      <div class="arrow"></div>
+      <div className="arrow"></div>
       <div className="crossIcon" onClick={crossIcon}>
         <IconContext.Provider value={{ color: "grey", size: "2rem" }}>
           <FiX />
@@ -43,7 +43,7 @@ export default function Signup() {
       </p>
       <div className="inputMonthSelect">
         <select
-          class="form-select selecttagOFInput"
+          className="form-select selecttagOFInput"
           aria-label="Default select example"
         >
           <option selected>MONTH</option>
@@ -63,7 +63,7 @@ export default function Signup() {
         </select>
 
         <select
-          class="form-select selecttagOFInput"
+          className="form-select selecttagOFInput"
           aria-label="Default select example"
         >
           <option selected>DAY</option>
