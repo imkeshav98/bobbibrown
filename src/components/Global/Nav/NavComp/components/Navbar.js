@@ -238,8 +238,10 @@ export function Navbar() {
               </Link>
             </div>
             <div className="LocationIcon">
+              <Link to="/cart">
               <BsBag />
               <div className="NavBarCartCount">{cartCount}</div>
+              </Link>
             </div>
           </IconContext.Provider>
         </div>

@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-export const ChekoutProducts = (data, i) => {
-    const [qty, setQty] = useState(1);
-    console.log(data)
+export const ChekoutProducts = (data,qty, i) => {
+    // const [qty, setQty] = useState(1);
+    console.log(data, qty, i)
     const getCartElement = async()=>{
         let res= await fetch(`https://bobbi-brown-api.herokuapp.com/product/product/${data.data}`);
         let element_data= await res.json();
         setCartElement(element_data)
       }
+
 
       const [cartElement, setCartElement]=useState({
         Product:{
@@ -18,7 +19,7 @@ export const ChekoutProducts = (data, i) => {
         }
        
       });
-      console.log()
+    //   console.log(data)
 
       useEffect(()=>{
         getCartElement()
@@ -30,11 +31,11 @@ export const ChekoutProducts = (data, i) => {
                 <div className="image_name">
                     <img src={cartElement.Product.Image}></img>
                     <div><p><b>{cartElement.Product.name}</b></p>
-                        <p>{`Qty: ${qty}`}</p>
+                        <p>{data.qty}</p>
                     </div>
                 </div>
                 <div><p>{`$${cartElement.Product.price}`}</p></div>
-                <div><p>{`$${cartElement.Product.price * qty}`}</p></div>
+                <div><p>{`$${cartElement.Product.price * data.qty}`}</p></div>
             </div>
         </div>
     )
