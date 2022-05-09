@@ -3,11 +3,16 @@ import { ButtonStyled } from "../../../../../Styled/Button";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { userLogin } from "../../../../../Redux/Login/action";
+import IM1 from "../../../../../assets/avatar1.gif";
+import IM2 from "../../../../../assets/avatar2.gif";
+import IM3 from "../../../../../assets/avatar3.gif";
 
 export const Logout = () => {
   const userData = JSON.parse(localStorage.getItem("Userdata")) || [];
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const avatar = [IM1, IM2, IM3];
+  let currentAvatar = avatar[Math.floor(Math.random() * avatar.length)];
 
   return (
     <div
@@ -23,7 +28,7 @@ export const Logout = () => {
         alignItems: "center",
         borderRadius: "5px",
         padding: "1em",
-        gap: "2em",
+        gap: "1em",
         right: "2rem",
         border: "1px solid black",
         boxShadow:
@@ -35,19 +40,20 @@ export const Logout = () => {
           width: "100px",
           height: "100px",
           borderRadius: "50%",
-          backgroundColor: "black",
           color: "white",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           fontWeight: "bolder",
           textAlign: "center",
+          overflow: "hidden",
         }}
       >
-        <span style={{ wordWrap: "break-word" }}>
-          {userData === [] ? "user" : userData.name}
-        </span>
+        <img src={currentAvatar} alt="" style={{ width: "100%" }} />
       </div>
+      <span style={{ wordWrap: "break-word" }}>
+        {userData === [] ? "user" : userData.name}
+      </span>
       <ButtonStyled
         style={{ borderRadius: "3px" }}
         onClick={() => {

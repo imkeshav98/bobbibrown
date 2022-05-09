@@ -3,24 +3,26 @@
     margin: 0px;
     padding: 0px;
 }
+.sessions__section {
+    margin: auto;
+    margin-bottom: 4em;
+}
 
 .sessions_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1em;
     max-width: 1400px;
-    margin: 3em auto 4em auto;
+    margin: auto;
 }
 
 .sessions__h2{
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 1rem;
     letter-spacing: 1.5px;
     font-size: 3rem;
     margin-left: -8px;
     font-weight: 500;
     text-align: center;
-    margin: 0.6em 0em;
+    margin-bottom: 0.3em 0em;
 }
 
 .sessions__P{
@@ -35,6 +37,8 @@
     gap: 1em;
     justify-content:flex-start;
     align-items: flex-start;
+    margin: 1.5em;
+
 }
 
 .session_container img{
@@ -51,4 +55,17 @@
     color: white;
     border: none;
     font-weight: 500;
+}
+
+@media only screen and (max-width: 1000px) {
+    .sessions_container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+}
+
+@media only screen and (max-width: 480px) {
+    .sessions_container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
 }

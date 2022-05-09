@@ -4,9 +4,28 @@ import { sessionSData } from "./sessionData";
 export const BookSession = () => {
   return (
     <section className="sessions__section">
-      <p className="sessions__P">VIRTUAL ARTISTY CONSULTATIONS</p>
-      <h2 className="sessions__h2">LEARN FROM THE PROS</h2>
-      <p className="sessions__P">
+      <p
+        className="sessions__P"
+        style={{
+          marginBottom: "1em",
+        }}
+      >
+        VIRTUAL ARTISTY CONSULTATIONS
+      </p>
+      <h2
+        className="sessions__h2"
+        style={{
+          marginBottom: "0.2em",
+        }}
+      >
+        LEARN FROM THE PROS
+      </h2>
+      <p
+        className="sessions__P"
+        style={{
+          marginBottom: "2em",
+        }}
+      >
         From trying a new shade to learning new tips, our artists are here to
         help with complimentary video sessions.
       </p>
