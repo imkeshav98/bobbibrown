@@ -29,7 +29,7 @@ export const Cart = () => {
   console.log("Check This Out", cartData);
 
   return (
-    <div style={{ padding: "2.5%" }}>
+    <div style={{ padding: "2.5% 0%" }}>
       <div id="cart_div">
         <div className="cart_products">
           <img
