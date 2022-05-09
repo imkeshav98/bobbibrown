@@ -131,7 +131,7 @@ export const ProductDetails = () => {
 
   // console.log(Review);
   const [imgsrc, setImgsrc] = useState(
-    "" //USE PRODUCTS IMAGE HERE
+    proData.Image //USE PRODUCTS IMAGE HERE
   );
 
   const handleImg = (e) => {
@@ -170,16 +170,17 @@ export const ProductDetails = () => {
       });
   };
 
+  console.log("ProdData", proData)
   return (
     <div id="products__details__main">
       <div id="mainProducts_div">
         <div className="left_div">
-          <p style={{ textAlign: "left" }}>Lip Care/Lip Balm</p>{" "}
+          <p style={{ textAlign: "left" }}>{proData.tag}</p>{" "}
           {/* Products tag or title */}
           <div className="imgsection">
             <div>
               <button value onClick={handleImg}>
-                <img src="https://www.bobbibrown.in/media/export/cms/products/v2_1080x1080/bb_sku_E1LM01_1080x1080_0.jpg"></img>
+                <img src={proData.Image}></img>
               </button>
               <button onClick={handleImg}>
                 <img src="https://www.bobbibrown.in/media/export/cms/products/v2_1080x1080/bb_prod_7485_1080x1080_0.jpg"></img>
@@ -195,7 +196,7 @@ export const ProductDetails = () => {
         </div>
         <div className="details_section">
           <div className="left_details1">
-            <p style={{ color: "red" }}>Our #1 Moisturizer</p>
+            <p style={{ color: "red" }}>Our #1 {proData.page} Product</p>
             <h4>{proData.name}</h4> {/*PRODUCT TITLE HERE*/}
             <p>{proData.tag}</p>
             <p>{proData.page}</p>
