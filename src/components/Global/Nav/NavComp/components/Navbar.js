@@ -323,14 +323,16 @@ export function Navbar() {
           >
             VIRTUAL SERVICES
           </div>
-          <div
-            className="NavbarChoiceElement"
-            id="Discover"
-            onMouseOver={unHideDiscoverBarBox}
-            onMouseLeave={hideNewDiscoverBoxBox}
-          >
-            DISCOVER
-          </div>
+          <Link to="/discover">
+            <div
+              className="NavbarChoiceElement"
+              id="Discover"
+              onMouseOver={unHideDiscoverBarBox}
+              onMouseLeave={hideNewDiscoverBoxBox}
+            >
+              DISCOVER
+            </div>
+          </Link>
         </div>
       </div>
 
