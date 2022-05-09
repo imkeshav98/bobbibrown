@@ -14,7 +14,6 @@ export default function User() {
   const dispatch = useDispatch();
   const crossIcon = () => {
     document.querySelector(".hiddenBoxofLogin").classList.add("hidden");
-    console.log("cross is clicked");
   };
 
   const [login, setLogin] = useState({

@@ -129,7 +129,6 @@ export const ProductDetails = () => {
       });
   };
 
-  // console.log(Review);
   const [imgsrc, setImgsrc] = useState(
     proData.Image //USE PRODUCTS IMAGE HERE
   );
@@ -155,7 +154,6 @@ export const ProductDetails = () => {
   const dispatch = useDispatch();
   const addtocart = async (product_id) => {
     let token = JSON.parse(localStorage.getItem("UserToken"));
-    console.log(product_id);
     fetch(`https://bobbi-brown-api.herokuapp.com/cart/add/${product_id}`, {
       method: "POST",
       headers: {

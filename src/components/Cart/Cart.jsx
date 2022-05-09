@@ -9,7 +9,6 @@ export const Cart = () => {
   let cartItems = useSelector((store) => store.loginData.payload);
   const [cartData, setCartData] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  // console.log('cartItemsssss',cartItems)
   const proceedtoCheckout = () => {
     navigate("/checkout");
   };
@@ -25,8 +24,6 @@ export const Cart = () => {
       setTotalPrice(cartItems.cart.totalPrice);
     }
   }, [cartItems]);
-
-  console.log("Check This Out", cartData);
 
   return (
     <div style={{ padding: "2.5% 0%" }}>

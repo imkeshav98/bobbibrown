@@ -22,7 +22,6 @@ export const ChekoutProducts = (data, qty, i) => {
   );
 };
 export const Subtotal = ({ data }) => {
-  // console.log(totalprice)
   return (
     <div id="subtotal">
       <div>

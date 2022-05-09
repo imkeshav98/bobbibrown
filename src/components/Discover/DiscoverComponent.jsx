@@ -10,7 +10,6 @@ export const DiscoverComp = (props) => {
       font-family: sans-serif;
     }
   `;
-  console.log(props);
   return (
     <>
       <DiscoverStyling>

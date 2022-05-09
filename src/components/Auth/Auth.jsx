@@ -42,7 +42,6 @@ export const Auth = () => {
       .catch(function (error) {
         if (error.response.data) {
           alert("Email and Password Should be fill");
-          console.log("errror");
         }
       });
   };
@@ -60,7 +59,6 @@ export const Auth = () => {
     axios
       .post("https://bobbi-brown-api.herokuapp.com/login", login)
       .then((res) => {
-        console.log(res.data.user.email);
         localStorage.setItem("Userdata", JSON.stringify(res.data.user));
         localStorage.setItem("UserToken", JSON.stringify(res.data.token));
         dispatch(userLogin(res.data.user));

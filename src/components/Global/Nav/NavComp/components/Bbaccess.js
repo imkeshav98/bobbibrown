@@ -8,7 +8,6 @@ import "./SignUp.css";
 export default function Bbaccess() {
   const crossIcon = () => {
     document.querySelector(".hiddenBoxofBbaccess").classList.add("hidden");
-    console.log("cross is clicked");
   };
   return (
     <>
