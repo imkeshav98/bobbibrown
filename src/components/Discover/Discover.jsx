@@ -1,11 +1,11 @@
 import { DiscoverComp } from "./DiscoverComponent";
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 import axios from "axios";
 
 export const Discover = () => {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     getData();
   }, []);
 
