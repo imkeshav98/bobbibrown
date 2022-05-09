@@ -167,8 +167,6 @@ export const ProductDetails = () => {
         localStorage.setItem("Userdata", JSON.stringify(cart.user));
       });
   };
-
-  console.log("ProdData", proData)
   return (
     <div id="products__details__main">
       <div id="mainProducts_div">
