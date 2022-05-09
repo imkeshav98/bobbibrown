@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 export default function Signup() {
   const crossIcon = () => {
     document.querySelector(".hiddenBoxofSignUp").classList.add("hidden");
-    console.log("cross is clicked");
   };
 
   return (

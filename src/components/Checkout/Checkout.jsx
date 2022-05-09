@@ -10,7 +10,6 @@ export const Checkout = () => {
   let userdata = JSON.parse(localStorage.getItem("Userdata"));
   const email_of_user = userdata.email;
   const dispatch = useDispatch();
-  // console.log('email',email_of_user)
 
   const deleteFunction = () => {
     let token = JSON.parse(localStorage.getItem("UserToken"));
