@@ -20,7 +20,7 @@ export const Auth = () => {
     password: "",
     email: "",
   });
-
+  console.log(userData);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({
