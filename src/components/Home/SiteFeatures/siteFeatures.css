@@ -10,7 +10,7 @@
     font-size: 0.9em;
 }
 .siteFeatures__item {
-    padding: 1em 2em;
+    padding: 1em 1em;
     margin: 1em 0em;
     display: flex;
     flex-direction: column;

@@ -27,6 +27,7 @@
     transform-style: preserve-3d;
     transition: all ease;
     overflow: hidden;
+    margin: 1em;
 }
 
 .card-image img {
@@ -83,7 +84,6 @@
     overflow: hidden;
     max-width: 1400px;
     margin: auto;
-    gap: 1em;
 }
 
 .gallery__btn {
@@ -104,4 +104,17 @@
     text-decoration: underline;
     font-weight: 500;
     margin: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+    .siteCom__card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .siteCom__card {
+            grid-template-columns: repeat(1, 1fr);
+    }
+    
 }

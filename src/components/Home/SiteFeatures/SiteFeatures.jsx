@@ -3,7 +3,7 @@ import { sfd } from "./siteFeaturesData";
 
 export const SiteFeatures = () => {
   return (
-    <section>
+    <div>
       <div className="siteFeatures">
         {sfd.map((e, i) => (
           <div className="siteFeatures__item" key={i}>
@@ -14,6 +14,6 @@ export const SiteFeatures = () => {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
