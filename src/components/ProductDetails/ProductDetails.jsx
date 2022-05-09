@@ -135,7 +135,6 @@ export const ProductDetails = () => {
   const [imgsrc, setImgsrc] = useState(
     proData.Image //USE PRODUCTS IMAGE HERE
   );
-
   const handleImg = (e) => {
     setImgsrc(e.target.src);
   };
