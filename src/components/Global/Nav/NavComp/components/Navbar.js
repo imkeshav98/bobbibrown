@@ -215,7 +215,7 @@ export function Navbar() {
             >
               JOIN BBACCESS
             </div>
-            <div className="LocationIcon">
+            <div className="LocationIcon notinmobile">
               <MdOutlineLocationOn />
             </div>
             <div
@@ -246,7 +246,7 @@ export function Navbar() {
               <BiSearch />
             </div>
           </IconContext.Provider>
-          <div>
+          <div className="mobileSearchStyle">
             <input
               className="BobbiBrown_inputSearch"
               onChange={(e) => {
@@ -294,7 +294,7 @@ export function Navbar() {
               FACE
             </div>
           </Link>
-          <Link to="/products/makeup">
+          <Link to="/products/makeup" className="notinmobile">
             <div
               className="NavbarChoiceElement"
               id="Makeup"
@@ -316,14 +316,14 @@ export function Navbar() {
           </Link>
 
           <div
-            className="NavbarChoiceElement"
+            className="NavbarChoiceElement notinmobile"
             id="Virtual"
             onMouseOver={unHideVirtualBarBox}
             onMouseLeave={hideNewVirtualBoxBox}
           >
             VIRTUAL SERVICES
           </div>
-          <Link to="/discover">
+          <Link to="/discover" className="notinmobile">
             <div
               className="NavbarChoiceElement"
               id="Discover"

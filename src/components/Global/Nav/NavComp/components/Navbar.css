@@ -181,6 +181,68 @@ pointer-events: auto;
     font-weight: 500;
 }
 
+@media only screen and (max-width: 1000px) {
+    .BobiBrownNavbar_signUpLogo {
+        display: none;
+    }
+
+    .BobiBrownNavbar_BobiBrownLogo {
+        width: 15em;
+        height: 1.5em;
+        margin: 0.5em;
+    }
+
+    .notinmobile {
+        display: none;
+    }
+
+    .BobiBrownNavbar_topPortion_HavingLogo {
+        padding-left: 0%;
+        padding-right: 2%;
+        height: 4em;
+    }
+
+    .BobbiBrownHavingWhole_Navbar {
+        min-height: auto;
+        padding-top: 2%;
+    }
+
+    .underLine {
+        text-decoration: none;
+    }
+
+    .BobbiBrown_SearchBar {
+        display: flex;
+        justify-content: center;
+        background-color: black;
+        height: 5vh;
+        color: grey;
+        width: auto;
+        z-index: 1;
+        border-bottom: none;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.347);
+        gap: 1em;
+    }
+
+    .BobbiBrownNavbar_SearchPart {
+        display: flex;
+        width: auto;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        gap: 2em;
+    }
+    .NavbarChoices {
+        display: flex;
+        color: white;
+        width: 95%;
+        justify-content: center;
+        gap: 2em;
+    }
+
+}
+
 
 
 
