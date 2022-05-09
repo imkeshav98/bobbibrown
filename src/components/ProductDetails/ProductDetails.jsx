@@ -1,5 +1,5 @@
 import "./productdetails.css";
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 import { BButton } from "./styled-components";
 import { Menu, Dropdown, Space } from "antd";
 import { DownOutlined, StarFilled, InstagramFilled } from "@ant-design/icons";
@@ -116,7 +116,7 @@ const IconFont = createFromIconfontCN({
 export const ProductDetails = () => {
   const { _id } = useParams();
   const [proData, setProData] = useState({});
-  useEffect(() => {
+  useLayoutEffect(() => {
     getProduct();
     return () => {};
   }, [_id]);
