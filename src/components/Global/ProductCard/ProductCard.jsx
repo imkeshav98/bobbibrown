@@ -1,15 +1,16 @@
 // import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ButtonStyled } from "../../../Styled/Button";
 import "./productcard.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { userLogin } from "../../../Redux/Login/action";
 
 export const ProductCard = ({ info }) => {
+  let isUserLoggedIn = useSelector((store) => store.loginData.payload);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const addtocart = async (product_id) => {
     let token = JSON.parse(localStorage.getItem("UserToken"));
-    console.log(product_id);
     fetch(`https://bobbi-brown-api.herokuapp.com/cart/add/${product_id}`, {
       method: "POST",
       headers: {
@@ -21,7 +22,7 @@ export const ProductCard = ({ info }) => {
       .then((cart) => {
         dispatch(userLogin(cart.user));
         localStorage.setItem("Userdata", JSON.stringify(cart.user));
-        alert(`Added ${info.name} to cart`)
+        alert(`Added ${info.name} to cart`);
       });
   };
 
@@ -36,7 +37,7 @@ export const ProductCard = ({ info }) => {
       <ButtonStyled
         size="medium"
         onClick={() => {
-          addtocart(info.id);
+          isUserLoggedIn === false ? navigate("/login") : addtocart(info.id);
         }}
       >
         ADD TO BAG
