@@ -6,10 +6,11 @@ import { DownOutlined, StarFilled, InstagramFilled } from "@ant-design/icons";
 import { createFromIconfontCN } from "@ant-design/icons";
 import { Review } from "./review";
 import "antd/dist/antd.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { userLogin } from "../../Redux/Login/action";
+import { useSelector } from "react-redux";
 
 const menu1 = (
   <Menu
@@ -116,6 +117,8 @@ const IconFont = createFromIconfontCN({
 export const ProductDetails = () => {
   const { _id } = useParams();
   const [proData, setProData] = useState({});
+  const navigate = useNavigate();
+  let isUserLoggedIn = useSelector((store) => store.loginData.payload);
   useLayoutEffect(() => {
     getProduct();
     return () => {};
@@ -201,8 +204,10 @@ export const ProductDetails = () => {
             </p>
             <BButton
               onClick={() => {
-                addtocart(proData._id);
-                alert(`${proData.name} is added to the cart`);
+                isUserLoggedIn === false
+                  ? navigate("/login")
+                  : addtocart(proData._id) &&
+                    alert(`${proData.name} is added to the cart`);
               }}
             >
               ADD TO BAG
