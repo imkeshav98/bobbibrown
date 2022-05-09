@@ -51,7 +51,7 @@ export const Logout = () => {
       >
         <img src={currentAvatar} alt="" style={{ width: "100%" }} />
       </div>
-      <span style={{ wordWrap: "break-word" }}>
+      <span style={{ wordWrap: "break-word", fontWeight: "500" }}>
         {userData === [] ? "user" : userData.name}
       </span>
       <ButtonStyled
