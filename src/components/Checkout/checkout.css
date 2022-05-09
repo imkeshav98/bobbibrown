@@ -100,3 +100,20 @@
 .image_name>div{
     width: 50%;
 }
+
+@media only screen and (max-width: 1000px) {
+    #checkout_content {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .checkout_userdetails {
+        width: 100%;
+        text-align: left;
+    }
+    .checkout_productdetails {
+        width: 100%;
+        text-align: left;
+    }
+}
