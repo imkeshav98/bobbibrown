@@ -1,6 +1,5 @@
 import React from "react";
 import { ButtonStyled } from "../../../../../Styled/Button";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { userLogin } from "../../../../../Redux/Login/action";
 import IM1 from "../../../../../assets/avatar1.gif";
@@ -9,7 +8,6 @@ import IM3 from "../../../../../assets/avatar3.gif";
 
 export const Logout = () => {
   const userData = JSON.parse(localStorage.getItem("Userdata")) || [];
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const avatar = [IM1, IM2, IM3];
   let currentAvatar = avatar[Math.floor(Math.random() * avatar.length)];
