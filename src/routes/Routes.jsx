@@ -8,6 +8,7 @@ import { Checkout } from "../components/Checkout/Checkout"; //FOR CHECKING PURPO
 import { Cart } from "../components/Cart/Cart";
 import { PrivateRoute } from "./PrivateRoutes";
 import { Thankyou } from "../components/Thankyou/Thankyou";
+import { Discover } from "../components/Discover/Discover";
 
 export const Routing = () => {
   return (
@@ -19,6 +20,7 @@ export const Routing = () => {
         <Route path="/products/:page/:_id" element={<ProductDetails />}></Route>
         <Route path="/login" element={<Auth />}></Route>
         <Route path="/thanks" element={<Thankyou />}></Route>
+        <Route path="/discover" element={<Discover />}></Route>
         <Route
           path="/cart"
           element={
