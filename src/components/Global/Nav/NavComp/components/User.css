@@ -97,3 +97,12 @@
 .hidden{
     display:none;
 }
+
+@media only screen and (max-width: 1000px) {
+    .userbox {
+        display: none;
+    }
+    .arrowOfUser{
+        display: none;
+    }
+}
