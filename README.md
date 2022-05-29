@@ -75,4 +75,4 @@ In this project we tried to me the clone of the bobbibrown wesite as close to re
 
 ## Limitations
 
-Somestimes site crash when we logout while visiting that cart page. We are working on fix for that.
+Sometimes site crash when we logout while visiting that cart page. We are working on fix for that.
