@@ -1,6 +1,4 @@
-
 <img src="https://www.stylegods.com/wp-content/uploads/2018/11/bobbi8.png" alt="Logo" width="100%">
-
 
 # Bobbi-Brown Clone
 
@@ -8,13 +6,11 @@ Bobbi Brown Cosmetics is a global premium beauty brand that empowers women to em
 
 This was a collaborative project of six member to create a clone of bobbi-brown website. This Project was made as a part of construct week curriculum of MASAI School.
 
-
 ## Demo
 
 Original Website:- https://www.bobbibrowncosmetics.com/
 
 Cloned Website:- https://bobbibrown.vercel.app/
-
 
 ## Tech Stack
 
@@ -22,15 +18,13 @@ Cloned Website:- https://bobbibrown.vercel.app/
 
 **Server:** Node, Express, MongoDb
 
-**Front-end Deployment:** Vercel 
+**Front-end Deployment:** Vercel
 
 **Back-end Deployment:** Heroku
-
 
 ## Backend Part
 
 Get full details of tha backend part:- https://github.com/sam7789/Bobbi-Brown-API
-
 
 ## Features
 
@@ -44,7 +38,6 @@ Get full details of tha backend part:- https://github.com/sam7789/Bobbi-Brown-AP
 - Live previews
 - Most of the pages are responsive
 - Fullscreen mode
-
 
 ## Screenshots / Images
 
@@ -68,7 +61,6 @@ Get full details of tha backend part:- https://github.com/sam7789/Bobbi-Brown-AP
 
 ![App Screenshot](https://github.com/imkeshav98/bobbibrown/blob/master/images/5.jpg)
 
-
 ## Contributors
 
 - [@Ayush Batra](https://github.com/sam7789)
@@ -77,13 +69,10 @@ Get full details of tha backend part:- https://github.com/sam7789/Bobbi-Brown-AP
 - [@Shubham V. Umap](https://github.com/Shubhamvumap123)
 - [@Aakash Yadav](https://github.com/aakash-0)
 
-
 ## End Notes
 
 In this project we tried to me the clone of the bobbibrown wesite as close to real one by using all the technical skills that we have learned up until now. We tried making it using React, Redux, CSS, AntDesign and Javascript . We have also created the backend part of this website which is use for authentication as well as storing, seaching data of the products and add/remove products & also get the total sum from the backend. The search keywords is passed to the backend inorder to get keywords related results. Workflow is not the same as original. We tried our best to clone it.
 
-
 ## Limitations
 
 Somestimes site crash when we logout while visiting that cart page. We are working on fix for that.
-
