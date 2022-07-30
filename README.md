@@ -71,8 +71,6 @@ Get full details of tha backend part:- https://github.com/sam7789/Bobbi-Brown-AP
 
 ## End Notes
 
-In this project we tried to me the clone of the bobbibrown wesite as close to real one by using all the technical skills that we have learned up until now. We tried making it using React, Redux, CSS, AntDesign and Javascript . We have also created the backend part of this website which is use for authentication as well as storing, seaching data of the products and add/remove products & also get the total sum from the backend. The search keywords is passed to the backend inorder to get keywords related results. Workflow is not the same as original. We tried our best to clone it.
+In this project we tried to make the clone of the bobbibrown website as close to real one by using all the technical skills that we have learned up until now. We tried making it using React, Redux, CSS, AntDesign and Javascript . We have also created the backend part of this website which is use for authentication as well as storing, seaching data of the products , add product, remove products & also get the total sum from the backend. The search keywords is passed to the backend inorder to get keywords related results. Workflow is not the same as original. We tried our best to clone it.
 
-## Limitations
 
-Sometimes site crash when we logout while visiting that cart page. We are working on fix for that.
