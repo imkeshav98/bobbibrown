@@ -11,7 +11,7 @@ export const Discover = () => {
 
   let getData = () => {
     axios
-      .get("https://bobbi-brown-api.herokuapp.com/discover")
+      .get("https://bobbibrown-api.onrender.com/discover")
       .then((res) => setData(res.data));
   };
   return (

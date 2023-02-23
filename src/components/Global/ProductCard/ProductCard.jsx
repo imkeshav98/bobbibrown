@@ -11,7 +11,7 @@ export const ProductCard = ({ info }) => {
   const navigate = useNavigate();
   const addtocart = async (product_id) => {
     let token = JSON.parse(localStorage.getItem("UserToken"));
-    fetch(`https://bobbi-brown-api.herokuapp.com/cart/add/${product_id}`, {
+    fetch(`https://bobbibrown-api.onrender.com/cart/add/${product_id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

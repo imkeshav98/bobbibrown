@@ -125,7 +125,7 @@ export const ProductDetails = () => {
   }, [_id]);
   const getProduct = () => {
     axios
-      .get(`https://bobbi-brown-api.herokuapp.com/product/product/${_id}`)
+      .get(`https://bobbibrown-api.onrender.com/product/product/${_id}`)
       .then((res) => {
         setProData(res.data.Product);
         setImgsrc(res.data.Product.Image);
@@ -156,7 +156,7 @@ export const ProductDetails = () => {
   const dispatch = useDispatch();
   const addtocart = async (product_id) => {
     let token = JSON.parse(localStorage.getItem("UserToken"));
-    fetch(`https://bobbi-brown-api.herokuapp.com/cart/add/${product_id}`, {
+    fetch(`https://bobbibrown-api.onrender.com/cart/add/${product_id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

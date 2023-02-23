@@ -42,7 +42,7 @@ export function Navbar() {
   useEffect(() => {
     async function getData() {
       const data = await fetch(
-        `https://bobbi-brown-api.herokuapp.com/product/makeup`
+        `https://bobbibrown-api.onrender.com/product/makeup`
       ).then((d) => d.json());
       setProduct(data);
     }

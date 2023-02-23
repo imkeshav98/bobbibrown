@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   const getData = () => {
-    axios.get("https://bobbi-brown-api.herokuapp.com/product").then((res) => {
+    axios.get("https://bobbibrown-api.onrender.com/product").then((res) => {
       const data = res.data;
       dispatch(handleData(data));
     });
@@ -30,7 +30,7 @@ function App() {
 
   const getNewUserData = (usertoken) => {
     axios
-      .get("https://bobbi-brown-api.herokuapp.com/cart/getcart", {
+      .get("https://bobbibrown-api.onrender.com/cart/getcart", {
         headers: { Authorization: `Bearer ${usertoken}` },
       })
       .then((res) => dispatch(userLogin(res.data)));

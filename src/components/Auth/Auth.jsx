@@ -32,7 +32,7 @@ export const Auth = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://bobbi-brown-api.herokuapp.com/register", userData)
+      .post("https://bobbibrown-api.onrender.com/register", userData)
       .then(function (response) {
         localStorage.setItem("Userdata", JSON.stringify(response.data.user));
         localStorage.setItem("UserToken", JSON.stringify(response.data.token));
@@ -57,7 +57,7 @@ export const Auth = () => {
   const loginSuccess = (e) => {
     e.preventDefault();
     axios
-      .post("https://bobbi-brown-api.herokuapp.com/login", login)
+      .post("https://bobbibrown-api.onrender.com/login", login)
       .then((res) => {
         localStorage.setItem("Userdata", JSON.stringify(res.data.user));
         localStorage.setItem("UserToken", JSON.stringify(res.data.token));
