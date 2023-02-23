@@ -8,7 +8,7 @@ export default function SearchDebouncing() {
   useEffect(() => {
     async function getData() {
       const data = await fetch(
-        "https://bobbi-brown-api.herokuapp.com/product"
+        "https://bobbibrown-api.onrender.com/product"
       ).then((d) => d.json());
       setProduct(data);
     }

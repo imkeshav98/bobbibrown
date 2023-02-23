@@ -9,7 +9,7 @@ export const CartData = (data, quantityy, key) => {
 
   const deleteFunction = (productID) => {
     let token = JSON.parse(localStorage.getItem("UserToken"));
-    fetch(`https://bobbi-brown-api.herokuapp.com/cart/delete/${productID}`, {
+    fetch(`https://bobbibrown-api.onrender.com/cart/delete/${productID}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -25,7 +25,7 @@ export const CartData = (data, quantityy, key) => {
 
   const addtocart = (productID) => {
     let token = JSON.parse(localStorage.getItem("UserToken"));
-    fetch(`https://bobbi-brown-api.herokuapp.com/cart/add/${productID}`, {
+    fetch(`https://bobbibrown-api.onrender.com/cart/add/${productID}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export const CartData = (data, quantityy, key) => {
 
   const removecart = (productID) => {
     let token = JSON.parse(localStorage.getItem("UserToken"));
-    fetch(`https://bobbi-brown-api.herokuapp.com/cart/remove/${productID}`, {
+    fetch(`https://bobbibrown-api.onrender.com/cart/remove/${productID}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

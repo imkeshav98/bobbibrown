@@ -13,7 +13,7 @@ export const Checkout = () => {
 
   const deleteFunction = () => {
     let token = JSON.parse(localStorage.getItem("UserToken"));
-    fetch(`https://bobbi-brown-api.herokuapp.com/cart/removeall`, {
+    fetch(`https://bobbibrown-api.onrender.com/cart/removeall`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

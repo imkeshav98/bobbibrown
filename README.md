@@ -20,7 +20,7 @@ Cloned Website:- https://bobbibrown.vercel.app/
 
 **Front-end Deployment:** Vercel
 
-**Back-end Deployment:** Heroku
+**Back-end Deployment:** Heroku || Render
 
 ## Backend Part
 
